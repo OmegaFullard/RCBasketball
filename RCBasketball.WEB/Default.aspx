@@ -22,11 +22,13 @@
                                     <br />
                                     Version 1.0<br /> Date: June 28, 2024</asp:Panel>
                                 
-                              </div>
+                </div>
+    <div>
         <center><h4 class="card-title">Join Our Basketball League</h4>
          <center><asp:Image ID="rcballer" runat="server" ImageUrl="images/RCBaller.png" Height="150px" Width="150px"/></center>
             <p><strong>Please be sure to follow us on Social Media!, links to social media websites</strong></p>
         <a href="#" class="btn btn-primary">Follow Us!</a>
+            
 		<div class="card-footer text-muted">
    <p>Sign up for volunteering at local events. </p>
   <a href="#" class="btn btn-primary">Events</a>
@@ -35,12 +37,13 @@
     <a href="#" class="btn btn-primary">Directions</a>
             <a href="https://google.com/maps?q=39.57.09,75.10.14.8"></a>
   </div></center>
-
+ 
+         </div>
   <div class="card-footer text-muted">
       <img src="Images/dunk1.png" /> <p>Tournaments throughout the city!!</p>
   </div>
-</div>
     
+    </div>
     
  
 </asp:Content>
