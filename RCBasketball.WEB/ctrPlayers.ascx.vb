@@ -2,8 +2,7 @@
 Imports RCBasketball.DAL
 Imports System.Linq
 Imports System.Web
-Public Class ctrPlayers_Find
-
+Public Class ctrPlayers
     Inherits System.Web.UI.UserControl
 
     Dim m_PlayerID As Integer = 0
@@ -22,7 +21,7 @@ Public Class ctrPlayers_Find
 
         Try
 
-            If Request.Form("ctl00$MainContent$ctrPlayers_Find$btnSearch") = "Search" Then Me.ctrHiddebField.Value = Convert.ToString(m_PlayerID)
+            If Request.Form("ctl00$MainContent$ctrSearch_Players$btnSearch") = "Search" Then Me.ctrHiddebField.Value = Convert.ToString(m_PlayerID)
 
             If (Page.IsPostBack) And Me.ctrHiddebField.Value.Length > 0 Then
                 tblPlayers = thePlayers.GetPlayersByID("%" + Me.ctrHiddebField.Value + "%")
@@ -37,12 +36,8 @@ Public Class ctrPlayers_Find
 
 
         Catch ex As Exception
-            Dim SendError As New clsRCBasketball_Web
-            Dim NotificationBody As String = ex.Message & "  " & ex.StackTrace
-            SendError.SendMailMessage(NotificationBody)
-            Response.Redirect("ErrorPage.aspx", False)
+            Throw
         End Try
-
     End Sub
 
     Protected Sub grdPlayers_PageIndexChanging(sender As Object, e As GridViewPageEventArgs) Handles grdPlayers.PageIndexChanging

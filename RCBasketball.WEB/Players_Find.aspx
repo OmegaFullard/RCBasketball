@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ctrPlayers.aspx.vb" Inherits="RCBasketball.WEB.ctrPlayers" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Players_Find.aspx.vb" Inherits="RCBasketball.WEB.Players_Find" %>
 
 <!DOCTYPE html>
 

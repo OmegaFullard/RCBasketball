@@ -11,50 +11,32 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class Players
+Partial Public Class ctrPlayers
 
     '''<summary>
-    '''Table1 control.
+    '''ctrHiddebField control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Table1 As Global.System.Web.UI.WebControls.Table
+    Protected WithEvents ctrHiddebField As Global.System.Web.UI.WebControls.HiddenField
 
     '''<summary>
-    '''Panel1 control.
+    '''lblSearchResult control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Panel1 As Global.System.Web.UI.WebControls.Panel
+    Protected WithEvents lblSearchResult As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''baller control.
+    '''grdPlayers control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents baller As Global.System.Web.UI.WebControls.Image
-
-    '''<summary>
-    '''ctrSearch_Players control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents ctrSearch_Players As Global.RCBasketball.WEB.ctrSearch_Players
-
-    '''<summary>
-    '''ctrPlayers control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents ctrPlayers As Global.RCBasketball.WEB.ctrPlayers
+    Protected WithEvents grdPlayers As Global.System.Web.UI.WebControls.GridView
 End Class

@@ -148,7 +148,7 @@
     <Content Include="Controls_Search\ctrSearch_Players.ascx" />
     <Content Include="Controls_Search\ctrSearch_Players_Update.ascx" />
     <Content Include="Controls_Update\ctrPlayers_Update.ascx" />
-    <Content Include="ctrPlayers.aspx" />
+    <Content Include="ctrPlayers.ascx" />
     <Content Include="Default.aspx">
       <BrowseToURL>~/Default.aspx</BrowseToURL>
     </Content>
@@ -203,6 +203,7 @@
     <Content Include="Players.aspx" />
     <Content Include="Players_Add.aspx" />
     <Content Include="Players_Delete.aspx" />
+    <Content Include="Players_Find.aspx" />
     <Content Include="Players_Update.aspx" />
     <Content Include="Reports_Players\rptPlayers.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -284,12 +285,12 @@
       <DependentUpon>ctrPlayers_Update.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ctrPlayers.aspx.designer.vb">
-      <DependentUpon>ctrPlayers.aspx</DependentUpon>
+    <Compile Include="ctrPlayers.ascx.designer.vb">
+      <DependentUpon>ctrPlayers.ascx</DependentUpon>
     </Compile>
-    <Compile Include="ctrPlayers.aspx.vb">
-      <DependentUpon>ctrPlayers.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+    <Compile Include="ctrPlayers.ascx.vb">
+      <DependentUpon>ctrPlayers.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Default.aspx.vb">
       <SubType>ASPXCodeBehind</SubType>
@@ -346,6 +347,13 @@
     </Compile>
     <Compile Include="Players_Delete.aspx.vb">
       <DependentUpon>Players_Delete.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Players_Find.aspx.designer.vb">
+      <DependentUpon>Players_Find.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Players_Find.aspx.vb">
+      <DependentUpon>Players_Find.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Players_Update.aspx.designer.vb">

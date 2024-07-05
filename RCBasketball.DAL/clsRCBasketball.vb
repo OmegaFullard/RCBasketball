@@ -117,5 +117,26 @@ Public Class clsRCBasketball
             Throw
         End Try
     End Function
+    Public Sub UpdatePlayer(ByVal thisPlayer As clsPlayers)
+
+
+        Dim adpPlayer As New PlayersTableAdapter
+
+
+        Try
+
+            With thisPlayer
+
+                adpPlayer.Update(.FirstN, .LastN, .Address, .City, .State, .Zip, .Phone, .Email, .origPlayerID)
+            End With
+
+
+
+
+        Catch ex As Exception
+            Throw
+        End Try
+
+    End Sub
 
 End Class
