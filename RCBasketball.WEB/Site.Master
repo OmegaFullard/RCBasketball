@@ -1,0 +1,157 @@
+﻿<%@ Master Language="VB" AutoEventWireup="true" CodeBehind="Site.master.vb" Inherits="RCBasketball.WEB.SiteMaster" %>
+<%@ Register assembly="System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" namespace="System.Web.UI" tagprefix="asp" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head runat="server">
+     <link rel="icon" href="images/favicon/favicon.ico" type="image/x-icon"/>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+         <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png"/>
+<link rel="manifest" href="/site.webmanifest"/>
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"/>
+
+<meta name="msapplication-TileColor" content="#da532c"/>
+<meta name="theme-color" content="#ffffff"/>
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+
+
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+}
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+</style>
+    <title>Royal City Basketball</title>
+
+    <link href="App_Themes/MasterSite/Page.css" rel="stylesheet" />
+    <link href="styles/Site.css" rel="stylesheet" />
+    <link href="http://localhost:64954/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="http://localhost:64954/Content/DataTables/css/dataTables.jqueryui.min.css" rel="stylesheet" />
+
+    <link href="http://localhost:64954/css/font-awesome.css" rel="stylesheet" />
+
+    <script src="http://localhost:64954/Scripts/jquery-3.4.1.slim.min.js"></script>
+
+    <script src="http://localhost:64954/Scripts/popper.min.js"></script>
+    <script src="http://localhost:64954/Scripts/bootstrap.min.js"></script>
+	
+	
+	  <script>
+    $(document).ready(function(){
+    $('#pw').keypress(function(e){
+      if(e.keyCode==13)
+      $('#GoBtn').click();
+    });
+});
+      </script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <meta name="Omega Fullard" content="Royal City, Developer: Omega Fullard, Designer: Omega Fullard" />
+    </head>
+
+<body>
+    <form id="form1" runat="server">
+       <div class="col-12 col-s-9">
+
+        <div class="header">
+		<meta name="msapplication-TileColor" content="#da532c"/>
+<meta name="theme-color" content="#ffffff"/>
+    <h1>
+                  <%--Logo--%>
+
+            <a href="#" class="logo">
+                <img src="images/RCLogo.png" alt="site logo" />
+            </a>
+
+        </h1>
+    <meta name="viewport" content="initial-scale=1.0, minimum-scale=1, maximum-scale=1.0, user-scalable=no" />
+           </div>
+        <!-- Main Nav -->
+      <div class="topnav menu">
+            <asp:Menu ID="NavigationMenu" runat="server" CssClass="topnav" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal" EnableScreenBoundaryDetection="true">
+               <Items>
+              
+                    <asp:MenuItem NavigateUrl="Default.aspx" Text="Home" />
+                    
+                   
+        
+                   <asp:MenuItem Text="Players">
+                
+               <asp:MenuItem Text="Find Player" NavigateUrl="Players_Find.aspx"></asp:MenuItem>
+              <asp:MenuItem Text= "Add Player" NavigateUrl="Players_Add.aspx"></asp:MenuItem>
+             <asp:MenuItem Text="Update Player" NavigateUrl="Players_Update.aspx"></asp:MenuItem>
+			 <asp:MenuItem Text="Delete Player" NavigateUrl="Players_Delete.aspx"></asp:MenuItem>
+             </asp:MenuItem>
+
+           
+                     <asp:MenuItem Text="Reports">
+                   <asp:MenuItem Text="Players Report" NavigateUrl="rptPlayers.aspx"></asp:MenuItem>
+                   
+             </asp:MenuItem>        
+            </Items>
+            </asp:Menu>
+</div>
+           </div>
+<div class="container">
+    <!-- Main Content -->
+    <div class="row">
+        <div class="col-md-10 col-sm-12">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+            </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="row">
+        <div class="col-md-12">
+            <hr />
+            Footer: © 2024 - Royal City Inc. 13 Majesty Way Royal City, PA 19106
+        </div>
+    </div>
+</div>
+
+    </form>
+</body>
+</html>
