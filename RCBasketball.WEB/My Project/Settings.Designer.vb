@@ -56,7 +56,7 @@ Namespace My
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("relay.city.phila.local")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
         Public ReadOnly Property EmailSmptpClient() As String
             Get
                 Return CType(Me("EmailSmptpClient"),String)
@@ -83,7 +83,7 @@ Namespace My
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Omega.Fullard@phila.gov")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
         Public ReadOnly Property WebAdmin() As String
             Get
                 Return CType(Me("WebAdmin"),String)
@@ -101,7 +101,7 @@ Namespace My
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Adtrack ERROR")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("RCBasketball ERROR")>  _
         Public ReadOnly Property EmailFrom() As String
             Get
                 Return CType(Me("EmailFrom"),String)
@@ -110,7 +110,7 @@ Namespace My
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Omega Fullard")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
         Public ReadOnly Property Admins() As String
             Get
                 Return CType(Me("Admins"),String)

@@ -149,7 +149,9 @@
     <Content Include="Controls_Search\ctrSearch_Players_Update.ascx" />
     <Content Include="Controls_Update\ctrPlayers_Update.ascx" />
     <Content Include="ctrPlayers.aspx" />
-    <Content Include="Default.aspx" />
+    <Content Include="Default.aspx">
+      <BrowseToURL>~/Default.aspx</BrowseToURL>
+    </Content>
     <Content Include="ErrorPage.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
@@ -273,6 +275,7 @@
     </Compile>
     <Compile Include="Controls_Search\ctrSearch_Players_Update.ascx.vb">
       <DependentUpon>ctrSearch_Players_Update.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Controls_Update\ctrPlayers_Update.ascx.designer.vb">
       <DependentUpon>ctrPlayers_Update.ascx</DependentUpon>
