@@ -7,7 +7,16 @@ Public Class ctrPlayers_Update
 
     Private m_FirstN As String = String.Empty
     Private m_LastN As String = String.Empty
+    Private m_PlayerID As Integer = 0
 
+    Public Property PlayerID As Integer
+        Get
+            Return m_PlayerID
+        End Get
+        Set(ByVal value As Integer)
+            m_PlayerID = value
+        End Set
+    End Property
 
 
     Public Property FirstN() As String

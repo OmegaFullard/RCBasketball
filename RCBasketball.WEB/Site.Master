@@ -115,7 +115,7 @@
         
                    <asp:MenuItem Text="Players">
                 
-               <asp:MenuItem Text="Find Player" NavigateUrl="Players_Find.aspx"></asp:MenuItem>
+               <asp:MenuItem Text="Find Player" NavigateUrl="Players.aspx"></asp:MenuItem>
               <asp:MenuItem Text= "Add Player" NavigateUrl="Players_Add.aspx"></asp:MenuItem>
              <asp:MenuItem Text="Update Player" NavigateUrl="Players_Update.aspx"></asp:MenuItem>
 			 <asp:MenuItem Text="Delete Player" NavigateUrl="Players_Delete.aspx"></asp:MenuItem>

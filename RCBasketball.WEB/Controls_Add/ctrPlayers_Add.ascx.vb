@@ -5,7 +5,25 @@ Imports System.Web
 
 Public Class ctrPlayers_Add
     Inherits System.Web.UI.UserControl
+    Private m_PlayerID As Integer = 0
+    Private m_PlayersList As String = String.Empty
 
+    Public Property PlayerID As Integer
+        Get
+            Return m_PlayerID
+        End Get
+        Set(ByVal value As Integer)
+            m_PlayerID = value
+        End Set
+    End Property
+    Public Property PlayersList() As String
+        Get
+            Return m_PlayersList
+        End Get
+        Set(ByVal value As String)
+            m_PlayersList = value
+        End Set
+    End Property
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Dim thePlayers As New clsRCBasketball
         Dim tblPlayers As New DAL.RCBasketball.PlayersDataTable
@@ -88,6 +106,9 @@ Public Class ctrPlayers_Add
 
     End Sub
 
+    Public Sub ClearControls()
+
+    End Sub
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         Response.Redirect("Players_Find.aspx", False)
     End Sub
