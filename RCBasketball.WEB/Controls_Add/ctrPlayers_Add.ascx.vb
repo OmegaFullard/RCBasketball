@@ -37,7 +37,7 @@ Public Class ctrPlayers_Add
 
                 End If
             Else
-                'PopulateControls()
+                PopulateControls()
             End If
 
         Catch ex As Exception

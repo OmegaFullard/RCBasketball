@@ -107,16 +107,11 @@
                                           <asp:TableCell>&nbsp;&nbsp;</asp:TableCell> <asp:TableCell>&nbsp;&nbsp;</asp:TableCell>
                                </asp:TableRow>
                                <asp:TableRow>
-                                        
-                                          <asp:TableCell>Phone:</asp:TableCell>
-                                           <asp:TableCell> 
-                                               <telerik:RadMaskedTextBox ID="RadMaskedTextBox1" style="padding-left:10px;  color:GrayText" RenderMode="Lightweight" Runat="server" Mask="(###)###-####" Width="200px" Height="25px" ValidationGroup="Submit">
-                                               </telerik:RadMaskedTextBox>
-                                          </asp:TableCell>
+                                 
                                           <asp:TableCell>Email1:</asp:TableCell>
                                           <asp:TableCell>
                                                  <telerik:RadTextBox ID="txtEmail" runat="server" Width="200px" Height="25px"></telerik:RadTextBox>
-                                                  <asp:RegularExpressionValidator ID="valRegularExprEmailAddr1" runat="server" ControlToValidate="txtEmail"
+                                                  <asp:RegularExpressionValidator ID="valRegularExprEmailAddr" runat="server" ControlToValidate="txtEmail"
                                                      ErrorMessage="Email Address is in the wrong format" 
                                                      ValidationExpression="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"
                                                      ValidationGroup="Submit">!</asp:RegularExpressionValidator>

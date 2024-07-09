@@ -2,23 +2,14 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="AjaxToolkit" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 
-<<<<<<< HEAD
     <div style="padding-left:5px; padding-top:5px; padding-bottom:5px">
                           <div class="Heading" >Delete Player</div>
                             <span class="required"><asp:Label ID="lblResult" runat="server" Text=""></asp:Label></span>
                             <asp:Table ID="Table1" runat="server" ForeColor="#0000A0" Width="1100px"  >
-                             <asp:TableRow >
-                                         <asp:TableCell>Player ID<span class="required">*</span>:</asp:TableCell>
-=======
-
-                      <div style="padding-left:5px; padding-top:5px; padding-bottom:5px">
-                          <div class="Heading" >DeletePlayer</div>
-                           <span class="required"><asp:Label ID="lblResult" runat="server" Text=""></asp:Label></span>
-                              <asp:Table ID="Table1" runat="server" ForeColor="#0000A0" Width="1100px" >
                              
 							 <asp:TableRow>
                                          <asp:TableCell>Player ID:</asp:TableCell>
->>>>>>> parent of df240ef (error with tableadapter initiation)
+
                                           <asp:TableCell > 
                                                <asp:TextBox ID="txtPlayerID" runat="server" Width="150px" Height="25px"></asp:TextBox>                                                                                             
                                           </asp:TableCell>

@@ -7,8 +7,8 @@ Public Class clsRCBasketball
     Dim m_PlayerID As Integer = 0
     Public Function GetPlayersList() As DataTable
         Try
-            Dim adpPlayersList As New PlayersTableAdapter
-            Dim tblPlayersList As RCBasketball.PlayersDataTable = adpPlayersList.GetDataByList()
+            Dim adpPlayersList As New PlayersListTableAdapter
+            Dim tblPlayersList As RCBasketball.PlayersListDataTable = adpPlayersList.GetDataByList()
 
             Return tblPlayersList
 
@@ -96,7 +96,7 @@ Public Class clsRCBasketball
         Try
 
             Dim adpPlayersReport As New rptPlayersTableAdapter
-            Dim tblPlayers As rptPlayersDataTable = adpPlayersReport.GetDataBy
+            Dim tblPlayers As rptPlayersDataTable = adpPlayersReport.GetData
 
             Return tblPlayers
 

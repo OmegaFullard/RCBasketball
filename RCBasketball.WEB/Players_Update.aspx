@@ -39,11 +39,7 @@
                                <div class="clear hideSkiplink">
                                           <asp:Menu ID="NavigationMenu" runat="server" CssClass="sub_menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
                                               <Items>
-<<<<<<< HEAD
-                                                  <asp:MenuItem Text="Find" NavigateUrl="Players_Find.aspx"></asp:MenuItem> 
-=======
                                                   <asp:MenuItem Text="Find" NavigateUrl="Players.aspx"></asp:MenuItem> 
->>>>>>> parent of df240ef (error with tableadapter initiation)
                                                   <asp:MenuItem  Text="Add"  NavigateUrl="Players_Add.aspx"></asp:MenuItem>
                                                  <asp:MenuItem Text="Update" NavigateUrl="Players_Update.aspx"></asp:MenuItem> 
                                                  <asp:MenuItem Text="Delete" NavigateUrl="Players_Delete.aspx"></asp:MenuItem> 
