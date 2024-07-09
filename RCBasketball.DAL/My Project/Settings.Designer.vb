@@ -59,9 +59,9 @@ Namespace My
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
          Global.System.Configuration.DefaultSettingValueAttribute("Data Source=OIT-L-BY10S73\SQLEXPRESS;Initial Catalog=RCBasketball;Integrated Secu"& _ 
             "rity=True")>  _
-        Public ReadOnly Property RCBasketball() As String
+        Public ReadOnly Property RCBasketballConnectionString() As String
             Get
-                Return CType(Me("RCBasketball"),String)
+                Return CType(Me("RCBasketballConnectionString"),String)
             End Get
         End Property
     End Class

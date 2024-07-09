@@ -22,7 +22,7 @@
 
                  <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
               <div aria-dropeffect="move" style="padding-left:5px; padding-right:10px; height:500px;overflow: auto; background:rgba(236, 236, 236, 1);">    
-                       <div class="HeadingB" >Players</div>
+                       <div class="HeadingB" >Player Update</div>
                  
                             <asp:Table ID="Table1" runat="server" ForeColor="#0000A0" >
                                    
@@ -39,7 +39,7 @@
                                <div class="clear hideSkiplink">
                                           <asp:Menu ID="NavigationMenu" runat="server" CssClass="sub_menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
                                               <Items>
-                                                  <asp:MenuItem Text="Find" NavigateUrl="Players.aspx"></asp:MenuItem> 
+                                                  <asp:MenuItem Text="Find" NavigateUrl="PlayersFind.aspx"></asp:MenuItem> 
                                                   <asp:MenuItem  Text="Add"  NavigateUrl="Players_Add.aspx"></asp:MenuItem>
                                                  <asp:MenuItem Text="Update" NavigateUrl="Players_Update.aspx"></asp:MenuItem> 
                                                  <asp:MenuItem Text="Delete" NavigateUrl="Players_Delete.aspx"></asp:MenuItem> 

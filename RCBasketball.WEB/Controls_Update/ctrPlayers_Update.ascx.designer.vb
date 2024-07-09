@@ -158,15 +158,6 @@ Partial Public Class ctrPlayers_Update
     Protected WithEvents Require_Phone As Global.AjaxControlToolkit.ValidatorCalloutExtender
 
     '''<summary>
-    '''RadMaskedTextBox1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents RadMaskedTextBox1 As Global.Telerik.Web.UI.RadMaskedTextBox
-
-    '''<summary>
     '''txtEmail control.
     '''</summary>
     '''<remarks>

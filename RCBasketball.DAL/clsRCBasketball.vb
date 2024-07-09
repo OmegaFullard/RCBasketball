@@ -96,7 +96,7 @@ Public Class clsRCBasketball
         Try
 
             Dim adpPlayersReport As New rptPlayersTableAdapter
-            Dim tblPlayers As rptPlayersDataTable = adpPlayersReport.GetDataBy
+            Dim tblPlayers As rptPlayersDataTable = adpPlayersReport.GetData
 
             Return tblPlayers
 

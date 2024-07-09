@@ -71,6 +71,12 @@
                                                             </ColumnsCollection>
                                                 </telerik:RadMultiColumnComboBox>
                                            </asp:TableCell>
+                                   </asp:TableRow>
+                                <asp:TableRow>
+                                         <asp:TableCell>&nbsp;&nbsp;</asp:TableCell><asp:TableCell>&nbsp;&nbsp;</asp:TableCell><asp:TableCell>&nbsp;&nbsp;</asp:TableCell><asp:TableCell>&nbsp;&nbsp;</asp:TableCell>
+                                          <asp:TableCell>&nbsp;&nbsp;</asp:TableCell> <asp:TableCell>&nbsp;&nbsp;</asp:TableCell>
+                              </asp:TableRow>
+                                   <asp:TableRow>
                                            <asp:TableCell>Zip<span class="required">*</span>:</asp:TableCell>
                                            <asp:TableCell>
                                                 <telerik:RadNumericTextBox ID="txtZip"   NumberFormat-DecimalDigits="0" NumberFormat-GroupSeparator="" MaxLength="5" runat="server" Width="100" Height="25px"></telerik:RadNumericTextBox>
@@ -107,13 +113,7 @@
                                           <asp:TableCell>&nbsp;&nbsp;</asp:TableCell> <asp:TableCell>&nbsp;&nbsp;</asp:TableCell>
                                </asp:TableRow>
                                <asp:TableRow>
-                                        
-                                          <asp:TableCell>Phone:</asp:TableCell>
-                                           <asp:TableCell> 
-                                               <telerik:RadMaskedTextBox ID="RadMaskedTextBox1" style="padding-left:10px;  color:GrayText" RenderMode="Lightweight" Runat="server" Mask="(###)###-####" Width="200px" Height="25px" ValidationGroup="Submit">
-                                               </telerik:RadMaskedTextBox>
-                                          </asp:TableCell>
-                                          <asp:TableCell>Email1:</asp:TableCell>
+                                          <asp:TableCell>Email:</asp:TableCell>
                                           <asp:TableCell>
                                                  <telerik:RadTextBox ID="txtEmail" runat="server" Width="200px" Height="25px"></telerik:RadTextBox>
                                                   <asp:RegularExpressionValidator ID="valRegularExprEmailAddr1" runat="server" ControlToValidate="txtEmail"
