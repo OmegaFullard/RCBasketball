@@ -3,7 +3,7 @@
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 
     <div style="padding-left:5px; padding-top:5px; padding-bottom:5px">
-                          <div class="Heading" >Update Player</div>
+                          <div class="Heading" >Delete Player</div>
                             <span class="required"><asp:Label ID="lblResult" runat="server" Text=""></asp:Label></span>
                             <asp:Table ID="Table1" runat="server" ForeColor="#0000A0" Width="1100px"  >
                              <asp:TableRow >
