@@ -41,6 +41,24 @@ Partial Public Class ctrPlayers_Add
     Protected WithEvents txtPlayerID As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''valRequiredFieldID control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents valRequiredFieldID As Global.System.Web.UI.WebControls.RequiredFieldValidator
+
+    '''<summary>
+    '''Required_ID control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Required_ID As Global.AjaxControlToolkit.ValidatorCalloutExtender
+
+    '''<summary>
     '''txtFirstN control.
     '''</summary>
     '''<remarks>
@@ -48,6 +66,24 @@ Partial Public Class ctrPlayers_Add
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtFirstN As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''valRequiredFieldFirstN control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents valRequiredFieldFirstN As Global.System.Web.UI.WebControls.RequiredFieldValidator
+
+    '''<summary>
+    '''Required_FirstN control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Required_FirstN As Global.AjaxControlToolkit.ValidatorCalloutExtender
 
     '''<summary>
     '''txtLastN control.
@@ -86,13 +122,13 @@ Partial Public Class ctrPlayers_Add
     Protected WithEvents valRequiredFieldCity As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
-    '''Requere_City control.
+    '''Require_City control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Requere_City As Global.AjaxControlToolkit.ValidatorCalloutExtender
+    Protected WithEvents Require_City As Global.AjaxControlToolkit.ValidatorCalloutExtender
 
     '''<summary>
     '''cmbStates control.
@@ -176,13 +212,13 @@ Partial Public Class ctrPlayers_Add
     Protected WithEvents valRegularExprEmailAddr1 As Global.System.Web.UI.WebControls.RegularExpressionValidator
 
     '''<summary>
-    '''CalloutEmailAddress control.
+    '''CalloutEmailAddress1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents CalloutEmailAddress As Global.AjaxControlToolkit.ValidatorCalloutExtender
+    Protected WithEvents CalloutEmailAddress1 As Global.AjaxControlToolkit.ValidatorCalloutExtender
 
     '''<summary>
     '''btnCancel control.

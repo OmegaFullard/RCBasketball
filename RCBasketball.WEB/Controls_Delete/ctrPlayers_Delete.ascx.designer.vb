@@ -77,24 +77,6 @@ Partial Public Class ctrPlayers_Delete
     Protected WithEvents txtCity As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''valRequiredFieldCity control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents valRequiredFieldCity As Global.System.Web.UI.WebControls.RequiredFieldValidator
-
-    '''<summary>
-    '''Requere_City control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Requere_City As Global.AjaxControlToolkit.ValidatorCalloutExtender
-
-    '''<summary>
     '''txtState control.
     '''</summary>
     '''<remarks>
@@ -113,24 +95,6 @@ Partial Public Class ctrPlayers_Delete
     Protected WithEvents txtZip As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''valRequiredFieldZip control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents valRequiredFieldZip As Global.System.Web.UI.WebControls.RequiredFieldValidator
-
-    '''<summary>
-    '''Require_Zip control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Require_Zip As Global.AjaxControlToolkit.ValidatorCalloutExtender
-
-    '''<summary>
     '''txtPhone control.
     '''</summary>
     '''<remarks>
@@ -140,24 +104,6 @@ Partial Public Class ctrPlayers_Delete
     Protected WithEvents txtPhone As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''valRequiredFieldPhone control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents valRequiredFieldPhone As Global.System.Web.UI.WebControls.RequiredFieldValidator
-
-    '''<summary>
-    '''Require_Phone control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Require_Phone As Global.AjaxControlToolkit.ValidatorCalloutExtender
-
-    '''<summary>
     '''txtEmail control.
     '''</summary>
     '''<remarks>
@@ -165,24 +111,6 @@ Partial Public Class ctrPlayers_Delete
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtEmail As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''valRegularExprEmailAddr1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents valRegularExprEmailAddr1 As Global.System.Web.UI.WebControls.RegularExpressionValidator
-
-    '''<summary>
-    '''CalloutEmailAddress control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents CalloutEmailAddress As Global.AjaxControlToolkit.ValidatorCalloutExtender
 
     '''<summary>
     '''btnCancel control.

@@ -2,7 +2,7 @@
 Imports RCBasketball.DAL
 Imports System.Linq
 Imports System.Web
-Imports Telerik.Web.UI
+
 Public Class ctrPlayers_Add
     Inherits System.Web.UI.UserControl
     Private m_PlayerID As Integer = 0

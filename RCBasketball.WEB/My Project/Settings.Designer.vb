@@ -122,9 +122,9 @@ Namespace My
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
          Global.System.Configuration.DefaultSettingValueAttribute("Data Source=OIT-L-BY10S73\SQLEXPRESS;Initial Catalog=RCBasketball;Integrated Secu"& _ 
             "rity=True")>  _
-        Public ReadOnly Property RCBasketball() As String
+        Public ReadOnly Property SQL_Server_Speed_sh() As String
             Get
-                Return CType(Me("RCBasketball"),String)
+                Return CType(Me("SQL_Server_Speed_sh"),String)
             End Get
         End Property
         
