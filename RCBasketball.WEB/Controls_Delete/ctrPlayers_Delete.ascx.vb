@@ -2,6 +2,8 @@
 Imports RCBasketball.DAL
 Imports System.Linq
 Imports System.Web
+Imports RCBasketball.DAL.RCBasketball
+
 Public Class ctrPlayers_Delete
     Inherits System.Web.UI.UserControl
 
@@ -17,7 +19,7 @@ Public Class ctrPlayers_Delete
     End Property
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Dim thePlayers As New clsRCBasketball
-        Dim tblPlayers As New DAL.RCBasketball.PlayersDataTable
+        Dim tblPlayers As New PlayersDataTable
 
         Try
 
@@ -30,7 +32,7 @@ Public Class ctrPlayers_Delete
                 Else
                     If txtPlayerID.Text.Trim.Length = 0 Then Exit Sub
 
-                    tblPlayers = thePlayers.GetPlayersByID(m_PlayerID)
+                    tblPlayers = thePlayers.GetPlayer()
                     If tblPlayers.Count = 0 Then CleanupControls() : Exit Sub
 
                     With tblPlayers(0)
@@ -82,7 +84,7 @@ Public Class ctrPlayers_Delete
 
             Try
                 Dim theRCBasketball As New clsRCBasketball
-                theRCBasketball.GetPlayersByID(Convert.ToInt32(thisPlayers))
+                theRCBasketball.DeletePlayer(thisPlayers)
                 lblResult.Text = "Player data has been deleted"
             Catch ex As SqlException
                 Throw New ApplicationException(ex.Message)

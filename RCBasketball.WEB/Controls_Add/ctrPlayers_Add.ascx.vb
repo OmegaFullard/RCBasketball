@@ -70,7 +70,7 @@ Public Class ctrPlayers_Add
 
             Try
                 Dim theRCBasketball As New clsRCBasketball
-                theRCBasketball.GetPlayersByID(Convert.ToInt32(thisPlayers))
+                theRCBasketball.AddPlayer(thisPlayers)
                 lblResult.Text = "Player data has been added"
             Catch ex As SqlException
                 If ex.Number = 2627 Then

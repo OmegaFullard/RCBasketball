@@ -104,6 +104,24 @@ Partial Public Class ctrPlayers_Delete
     Protected WithEvents txtPhone As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''valRequiredFieldPhone control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents valRequiredFieldPhone As Global.System.Web.UI.WebControls.RequiredFieldValidator
+
+    '''<summary>
+    '''Require_Phone control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Require_Phone As Global.AjaxControlToolkit.ValidatorCalloutExtender
+
+    '''<summary>
     '''txtEmail control.
     '''</summary>
     '''<remarks>

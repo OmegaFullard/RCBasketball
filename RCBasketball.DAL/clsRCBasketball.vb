@@ -5,6 +5,8 @@ Imports RCBasketball.DAL.RCBasketballTableAdapters
 Public Class clsRCBasketball
 
     Dim m_PlayerID As Integer = 0
+    Private PlayerID As Boolean
+
     Public Function GetPlayersList() As DataTable
         Try
             Dim adpPlayersList As New PlayersListTableAdapter
@@ -139,4 +141,44 @@ Public Class clsRCBasketball
 
     End Sub
 
+    Public Function AddPlayer(ByVal thisPlayer As clsPlayers) As Integer
+        Dim adpPlayer As PlayersTableAdapter = New PlayersTableAdapter()
+        Dim adpGetPlayerID As GetPlayerIDTableAdapter = New GetPlayerIDTableAdapter()
+
+        Dim tblPlayer As PlayersDataTable = New PlayersDataTable()
+        PlayerID = False
+
+        Try
+
+            If True Then
+                Dim withBlock = thisPlayer
+                adpPlayer.Insert(withBlock.FirstN, withBlock.LastN, withBlock.Address, withBlock.City, withBlock.State, withBlock.Zip, withBlock.Phone, withBlock.Email)
+            End If
+
+            Dim tblAddPlayer As PlayersDataTable = adpPlayer.GetData()
+            Dim row As PlayersRow = tblAddPlayer(0)
+            Return row.PlayerID
+
+        Catch ex As Exception
+            Throw
+        End Try
+
+    End Function
+
+
+    Public Sub DeletePlayer(ByVal thisPlayer As clsPlayers)
+        Dim adpPlayer As PlayersTableAdapter = New PlayersTableAdapter()
+
+        Try
+
+            If True Then
+                Dim withBlock = thisPlayer
+                adpPlayer.Delete(withBlock.PlayerID)
+            End If
+
+        Catch ex As Exception
+            Throw
+        End Try
+
+    End Sub
 End Class

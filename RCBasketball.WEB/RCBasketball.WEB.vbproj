@@ -146,6 +146,7 @@
     <Content Include="Controls_Delete\ctrPlayers_Delete.ascx" />
     <Content Include="Controls_Find\ctrPlayers_Find.ascx" />
     <Content Include="Controls_Search\ctrSearch_Players.ascx" />
+    <Content Include="Controls_Search\ctrSearch_Players_Find.ascx" />
     <Content Include="Controls_Search\ctrSearch_Players_Update.ascx" />
     <Content Include="Controls_Update\ctrPlayers_Update.ascx" />
     <Content Include="ctrPlayers.ascx" />
@@ -269,6 +270,13 @@
     </Compile>
     <Compile Include="Controls_Search\ctrSearch_Players.ascx.vb">
       <DependentUpon>ctrSearch_Players.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls_Search\ctrSearch_Players_Find.ascx.designer.vb">
+      <DependentUpon>ctrSearch_Players_Find.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls_Search\ctrSearch_Players_Find.ascx.vb">
+      <DependentUpon>ctrSearch_Players_Find.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Controls_Search\ctrSearch_Players_Update.ascx.designer.vb">

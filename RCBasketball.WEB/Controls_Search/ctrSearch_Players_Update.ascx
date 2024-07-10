@@ -10,8 +10,8 @@
                                                <telerik:RadMultiColumnComboBox    runat="server" ClearButton="false" ClientEvents-OnLoad="OnClientLoad0" ID="cmbPlayer" DropDownWidth="300px"  Height="200px" Width="180px" AutoPostBack="true"
                                                        Placeholder="--Select" EnableViewState="true">
                                                 <ColumnsCollection> 
-                                                      <telerik:MultiColumnComboBoxColumn Field="FirstN" Title="FirstN" Width="150px" />
-                                                      <telerik:MultiColumnComboBoxColumn Field="LastN" Title="LastN" Width="75px" />
+                                                      <telerik:MultiColumnComboBoxColumn Field="PlayerID" Title="ID" Width="150px" />
+                                                      <telerik:MultiColumnComboBoxColumn Field="FirstN" Title="Last" Width="75px" />
                                                 </ColumnsCollection></telerik:RadMultiColumnComboBox> &nbsp;&nbsp;&nbsp
                                         </asp:TableCell>
                               </asp:TableRow>

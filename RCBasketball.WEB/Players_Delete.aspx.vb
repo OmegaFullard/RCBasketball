@@ -22,20 +22,15 @@
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Try
 
-
             If (Page.IsPostBack) Then
+                Dim strPlayer As String = (Request.Form("ctl00_MainContent_ctrPlayers_Update_PlayerID_ClientState").Replace("""", "").Replace("{", "").Replace("}", "").Replace(",", "").Replace("text", "").Replace("value", "").Replace("%20", " ").Replace("%26", "&"))
 
-
-                Dim strPlayers As String = Request.Form("ctl00_MainContent_ctrSearch_Players_Update_cmbPlayers_ClientState") _
-                    .Replace(Chr(34), "").Replace("{", "").Replace("}", "").Replace(",", "").Replace("text", "").Replace("value", "").Replace("%20", " ").Replace("%26", "&")
-
-                If strPlayers.Length > 4 Then
-                    Dim arrPlayers() As String = strPlayers.Split(":")
-                    Me.ctrPlayers_Delete.PlayerID = arrPlayers(1)
-                    Me.ctrSearch_Players_Update.ClearControl()
+                If strPlayer.Length > 0 Then
+                    Dim arrPlayers As String() = strPlayer.Split(Convert.ToChar(":"))
+                    Me.ctrPlayers_Delete.PlayerID = Integer.Parse(arrPlayers(0))
+                    Me.ctrPlayers_Delete.PlayerID = Integer.Parse(arrPlayers(1))
+                    Me.ctrPlayers_Delete.PlayerID = Integer.Parse(arrPlayers(2))
                 End If
-
-
 
             End If
 

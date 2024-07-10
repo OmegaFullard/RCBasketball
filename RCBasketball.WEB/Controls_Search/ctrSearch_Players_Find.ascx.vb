@@ -1,5 +1,6 @@
-﻿Public Class ctrSearch_Players
+﻿Public Class ctrSearch_Players_Find
     Inherits System.Web.UI.UserControl
+
 
     Private m_PlayerID As Integer = 0
 
@@ -20,5 +21,4 @@
         m_PlayerID = Me.txtPlayerID.Text
 
     End Sub
-
 End Class
