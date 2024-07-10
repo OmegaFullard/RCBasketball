@@ -12,6 +12,7 @@
                 <Value>=Fields!PlayerID.Value</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
+                  <Color>Indigo</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -19,7 +20,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox21</rd:DefaultName>
-        <Top>0.06944in</Top>
+        <Top>0.05556in</Top>
         <Left>0.47445in</Left>
         <Height>0.25in</Height>
         <Width>1.72965in</Width>
@@ -44,6 +45,7 @@
                 <Value>=Fields!LastN.Value</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
+                  <Color>Indigo</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -77,6 +79,7 @@
                 <Value>=Fields!Address.Value</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
+                  <Color>Indigo</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -110,6 +113,7 @@
                 <Value>=Fields!Phone.Value</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
+                  <Color>Indigo</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -144,6 +148,7 @@
                 <Value>=Fields!Email.Value</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
+                  <Color>Indigo</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -178,6 +183,7 @@
                 <Value>=Fields!FirstN.Value</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
+                  <Color>Indigo</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -211,6 +217,7 @@
                 <Value>=Fields!City.Value</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
+                  <Color>Indigo</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -244,6 +251,7 @@
                 <Value>=Fields!State.Value</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
+                  <Color>Indigo</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -277,6 +285,7 @@
                 <Value>=Fields!Zip.Value</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
+                  <Color>Indigo</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -302,7 +311,12 @@
       </Textbox>
     </ReportItems>
     <Height>3.52778in</Height>
-    <Style />
+    <Style>
+      <Border>
+        <Style>None</Style>
+      </Border>
+      <BackgroundColor>WhiteSmoke</BackgroundColor>
+    </Style>
   </Body>
   <Width>9.92361in</Width>
   <Page>
@@ -319,7 +333,9 @@
               <TextRuns>
                 <TextRun>
                   <Value>Royal City Inc.</Value>
-                  <Style />
+                  <Style>
+                    <Color>Indigo</Color>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
@@ -328,7 +344,9 @@
               <TextRuns>
                 <TextRun>
                   <Value>13 Majesty Way</Value>
-                  <Style />
+                  <Style>
+                    <Color>Indigo</Color>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
@@ -337,7 +355,9 @@
               <TextRuns>
                 <TextRun>
                   <Value>Royal City, PA 19106</Value>
-                  <Style />
+                  <Style>
+                    <Color>Indigo</Color>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
@@ -412,6 +432,7 @@
                   <Style>
                     <FontSize>18pt</FontSize>
                     <FontWeight>Bold</FontWeight>
+                    <Color>Indigo</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -441,6 +462,7 @@
         <Border>
           <Style>None</Style>
         </Border>
+        <BackgroundColor>Lavender</BackgroundColor>
       </Style>
     </PageHeader>
     <PageFooter>
@@ -456,7 +478,10 @@
               <TextRuns>
                 <TextRun>
                   <Value>=Globals!PageNumber</Value>
-                  <Style />
+                  <Style>
+                    <FontWeight>Bold</FontWeight>
+                    <Color>Indigo</Color>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
@@ -464,9 +489,9 @@
           </Paragraphs>
           <rd:DefaultName>PageNumber</rd:DefaultName>
           <Top>0.51611in</Top>
-          <Left>8.37722in</Left>
+          <Left>8.19667in</Left>
           <Height>0.25in</Height>
-          <Width>1in</Width>
+          <Width>1.18056in</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -485,7 +510,10 @@
               <TextRuns>
                 <TextRun>
                   <Value>=Globals!ExecutionTime</Value>
-                  <Style />
+                  <Style>
+                    <FontWeight>Bold</FontWeight>
+                    <Color>Indigo</Color>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
@@ -495,7 +523,7 @@
           <Top>0.51611in</Top>
           <Left>0.45361in</Left>
           <Height>0.25in</Height>
-          <Width>1in</Width>
+          <Width>1.30556in</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -512,6 +540,7 @@
         <Border>
           <Style>None</Style>
         </Border>
+        <BackgroundColor>Lavender</BackgroundColor>
       </Style>
     </PageFooter>
     <LeftMargin>1in</LeftMargin>
