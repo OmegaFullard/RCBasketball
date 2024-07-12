@@ -8,7 +8,7 @@
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="head">
             </asp:Content>
            <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="ContentPlaceHolder1" >
-               <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+             
               <div aria-dropeffect="move" style="padding-left:10px; height:500px;overflow:auto;background:rgba(236, 236, 236, 1);">  
 			  
                      <h2>Reports:Players Report</h2><br />

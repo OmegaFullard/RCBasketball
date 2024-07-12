@@ -5,7 +5,13 @@
     Private m_ReportPath As String = String.Empty
     Private m_FirstN As String = String.Empty
     Private m_LastN As String = String.Empty
-    Private m_PlayerID As String = String.Empty
+    Private m_Address As String = String.Empty
+    Private m_City As String = String.Empty
+    Private m_State As String = String.Empty
+    Private m_Zip As String = String.Empty
+    Private m_Phone As String = String.Empty
+    Private m_Email As String = String.Empty
+    Private m_PlayerID As Integer = 0
 
 
     Public Property ReportName() As String
@@ -42,11 +48,11 @@
     End Property
 
 
-    Public Property PlayerID() As String
+    Public Property PlayerID As Integer
         Get
             Return m_PlayerID
         End Get
-        Set(ByVal value As String)
+        Set(ByVal value As Integer)
             m_PlayerID = value
         End Set
     End Property
@@ -65,6 +71,61 @@
         End Get
         Set(ByVal value As String)
             m_LastN = value
+        End Set
+    End Property
+
+    Public Property Address As String
+        Get
+            Return m_Address
+        End Get
+        Set(ByVal value As String)
+            m_Address = value
+        End Set
+    End Property
+
+    Public Property City As String
+        Get
+            Return m_City
+        End Get
+        Set(ByVal value As String)
+            m_City = value
+        End Set
+    End Property
+
+
+    Public Property State As String
+        Get
+            Return m_State
+        End Get
+        Set(ByVal value As String)
+            m_State = value
+        End Set
+    End Property
+
+    Public Property Zip As String
+        Get
+            Return m_Zip
+        End Get
+        Set(ByVal value As String)
+            m_Zip = value
+        End Set
+    End Property
+
+    Public Property Phone As String
+        Get
+            Return m_Phone
+        End Get
+        Set(ByVal value As String)
+            m_Phone = value
+        End Set
+    End Property
+
+    Public Property Email As String
+        Get
+            Return m_Email
+        End Get
+        Set(ByVal value As String)
+            m_Email = value
         End Set
     End Property
 

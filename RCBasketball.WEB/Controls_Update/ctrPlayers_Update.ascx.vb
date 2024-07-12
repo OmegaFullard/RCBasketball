@@ -63,7 +63,7 @@ Public Class ctrPlayers_Update
                             If .Zip.Trim.Length > 5 Then txtZip.Text = .Zip.Trim.Substring(0, 5) Else txtZip.Text = .Zip.Trim
                         End If
 
-                        If Not .IsPhoneNull Then txtPhone.Text = .Phone.Trim.Replace("-", "").Replace("(", "").Replace(")", "").Replace(" ", "")
+                        If Not .IsPhoneNull Then txtPhone.Text = .Phone
                         If Not .IsEmailNull Then txtEmail.Text = .Email
 
 
@@ -103,9 +103,10 @@ Public Class ctrPlayers_Update
             Dim thisPlayers As New clsPlayers
 
             With thisPlayers
-                If txtFirstN.Text.Trim.Length = 0 Or txtLastN.Text.Trim.Length = 0 Then Exit Sub
+                If txtPlayerID.Text.Length = 0 Then Exit Sub
 
-                .origPlayerID = txtPlayerID.Text.Trim : .FirstN = txtFirstN.Text.Trim : .LastN = txtLastN.Text.Trim : .Address = txtAddress.Text.Trim
+                '.origPlayerID = txtPlayerID.Text.Trim
+                .FirstN = txtFirstN.Text.Trim : .LastN = txtLastN.Text.Trim : .Address = txtAddress.Text.Trim
                 .City = txtCity.Text.Trim : .State = cmbStates.Text : .Zip = txtZip.Text : .Phone = txtPhone.Text.Trim : .Email = txtEmail.Text.Trim
 
             End With
@@ -136,6 +137,10 @@ Public Class ctrPlayers_Update
         txtPhone.Text = String.Empty : txtEmail.Text = String.Empty
 
 
+    End Sub
+
+    Public Sub CleanResultControl()
+        Me.lblResult.Text = String.Empty
     End Sub
 
 End Class

@@ -28,8 +28,8 @@
                 If strPlayer.Length > 0 Then
                     Dim arrPlayers As String() = strPlayer.Split(Convert.ToChar(":"))
                     Me.ctrPlayers_Delete.PlayerID = Integer.Parse(arrPlayers(0))
-                    Me.ctrPlayers_Delete.PlayerID = Integer.Parse(arrPlayers(1))
-                    Me.ctrPlayers_Delete.PlayerID = Integer.Parse(arrPlayers(2))
+                    'Me.ctrPlayers_Delete.PlayerID = Integer.Parse(arrPlayers(1))
+                    'Me.ctrPlayers_Delete.PlayerID = Integer.Parse(arrPlayers(2))
                 End If
 
             End If

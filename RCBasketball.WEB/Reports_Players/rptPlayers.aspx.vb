@@ -11,6 +11,7 @@ Public Class rptPlayers
     'Private frmRequest As String = String.Empty
     Private m_PlayerID As Integer = 0
     Private theSearch As New clsSearch
+    Private strPlayerID As String = String.Empty
 
     Public Property PlayerID As Integer
         Get
@@ -24,7 +25,7 @@ Public Class rptPlayers
         If (Page.IsPostBack) Then
             If Request.Form("ctl00$MainContent$ctrSearch_Players$btnSearch") = "Search" Then
                 ctrSearch_Players.PopulateSearchControl()
-                theSearch.ReportPath = "~/Reports/rptPlayers.rdlc"
+                theSearch.ReportPath = "~/Reports_Players/rptPlayers.rdlc"
                 theSearch.PlayerID = ctrSearch_Players.PlayerID
                 PlayerReport()
             End If
@@ -46,7 +47,7 @@ Public Class rptPlayers
 
             ReportViewer1.ProcessingMode = ProcessingMode.Local
             ReportViewer1.LocalReport.ReportPath = Server.MapPath(theSearch.ReportPath)
-            If theSearch.PlayerID.Trim.Length = 0 Then theSearch.PlayerID = "XXXXXX"
+            If theSearch.PlayerID = 0 Then theSearch.PlayerID = "XXXXXX"
 
             dtReport = thePlayers.GetPlayersByID(theSearch.PlayerID)
 

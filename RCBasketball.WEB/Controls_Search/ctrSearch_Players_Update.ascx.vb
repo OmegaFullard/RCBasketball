@@ -7,6 +7,16 @@ Imports System.Web
 Public Class ctrSearch_Players_Update
     Inherits System.Web.UI.UserControl
 
+    Private m_PlayerID As Integer = 0
+
+    Public Property PlayerID As Integer
+        Get
+            Return m_PlayerID
+        End Get
+        Set(ByVal value As Integer)
+            m_PlayerID = value
+        End Set
+    End Property
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Dim thePlayers As New clsRCBasketball
 
@@ -25,4 +35,10 @@ Public Class ctrSearch_Players_Update
 
 
     End Sub
+
+    'Public Sub PopulateSearchControl()
+
+    '    m_PlayerID = cmbPlayer.Text
+
+    'End Sub
 End Class

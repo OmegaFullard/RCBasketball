@@ -17,7 +17,7 @@
 
     Public Sub PopulateSearchControl()
 
-        m_PlayerID = Me.txtPlayerID.Text
+        m_PlayerID = txtPlayerID.Text
 
     End Sub
 

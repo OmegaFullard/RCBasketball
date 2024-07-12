@@ -3,7 +3,7 @@
                         You can use a partial Player ID in your search
                        <asp:Table ID="Table1" runat="server" ForeColor="#0000A0" >
                              <asp:TableRow>
-                                          <asp:TableCell>Agent:&nbsp;&nbsp;</asp:TableCell>
+                                          <asp:TableCell>Player:&nbsp;&nbsp;</asp:TableCell>
                                           <asp:TableCell>
                                                <asp:TextBox ID="txtPlayerID" runat="server" Width="180"></asp:TextBox>
                                            </asp:TableCell>

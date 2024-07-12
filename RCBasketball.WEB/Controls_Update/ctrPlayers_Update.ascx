@@ -108,7 +108,7 @@
                                </asp:TableRow>
                                <asp:TableRow>
                                  
-                                          <asp:TableCell>Email1:</asp:TableCell>
+                                          <asp:TableCell>Email:</asp:TableCell>
                                           <asp:TableCell>
                                                  <telerik:RadTextBox ID="txtEmail" runat="server" Width="200px" Height="25px"></telerik:RadTextBox>
                                                   <asp:RegularExpressionValidator ID="valRegularExprEmailAddr" runat="server" ControlToValidate="txtEmail"
