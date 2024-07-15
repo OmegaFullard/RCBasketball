@@ -7,10 +7,11 @@
                       <div style="padding-left:5px; padding-top:5px; padding-bottom:5px">
                           <div class="Heading" >Update Player</div>
                             <span class="required"><asp:Label ID="lblResult" runat="server" Text=""></asp:Label></span>
+                            <div> <asp:Label ID="lblPlayerID" runat="server" Text=""></asp:Label></div>
                             <asp:Table ID="Table1" runat="server" ForeColor="#0000A0" Width="1100px"  >
-                             <asp:TableRow >
+                             <asp:TableRow>
                                          <asp:TableCell>Player ID<span class="required">*</span>:</asp:TableCell>
-                                          <asp:TableCell > 
+                                          <asp:TableCell> 
                                                   <telerik:RadTextBox ID="txtPlayerID" runat="server" Width="200px" Height="25px" Enabled="false"></telerik:RadTextBox>
                                           </asp:TableCell>
                                    <asp:TableCell>&nbsp;&nbsp;</asp:TableCell> <asp:TableCell>&nbsp;&nbsp;</asp:TableCell> 

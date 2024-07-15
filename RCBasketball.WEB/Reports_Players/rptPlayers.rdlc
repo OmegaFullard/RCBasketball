@@ -4,9 +4,11 @@
   <DataSources>
     <DataSource Name="RCBasketballDataSet">
       <ConnectionProperties>
-        <DataProvider>System.Data.DataSet</DataProvider>
-        <ConnectString>/* Local Connection */</ConnectString>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString>Data Source=OIT-L-BY10S73\SQLEXPRESS;Initial Catalog=RCBasketball</ConnectString>
+        <IntegratedSecurity>true</IntegratedSecurity>
       </ConnectionProperties>
+      <rd:SecurityType>Integrated</rd:SecurityType>
       <rd:DataSourceID>d120aec0-270f-4338-9255-142340c6ab91</rd:DataSourceID>
     </DataSource>
   </DataSources>

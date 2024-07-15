@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Players_Find.aspx.vb"  MasterPageFile="~/Site.Master" Inherits="RCBasketball.WEB.Players_Find" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
-<%@ Register Src="~/Controls_Search/ctrSearch_Players.ascx" TagPrefix="uc1" TagName="ctrSearch_Players" %>
+<%@ Register Src="~/Controls_Search/ctrSearch_Players_Find.ascx" TagPrefix="uc1" TagName="ctrSearch_Players_Find" %>
 <%@ Register Src="~/Controls_Find/ctrPlayers_Find.ascx" TagPrefix="uc1" TagName="ctrPlayers_Find" %>
 
 
@@ -21,7 +21,7 @@
                                                        </asp:Panel> 
                                          </asp:TableCell>
                                           <asp:TableCell>&nbsp;&nbsp;&nbsp</asp:TableCell>
-                                        <asp:TableCell VerticalAlign="Top"><uc1:ctrSearch_Players runat="server" ID="ctrSearch_Players" /></asp:TableCell>
+                                        <asp:TableCell VerticalAlign="Top"><uc1:ctrSearch_Players_Find runat="server" ID="ctrSearch_Players_Find" /></asp:TableCell>
                                     </asp:TableRow>
                               
                               </asp:Table>

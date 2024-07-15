@@ -5,6 +5,7 @@
 <div style="padding-left:5px; padding-top:5px; padding-bottom:5px">
                           <div class="Heading" >Add Player</div>
                             <span class="required"><asp:Label ID="lblResult" runat="server" Text=""></asp:Label></span>
+                          <div> <asp:Label ID="lblPlayerID" runat="server" Text=""></asp:Label></div>
                             <asp:Table ID="Table1" runat="server" ForeColor="#0000A0" Width="1100px"  >
                              <asp:TableRow >
                                          <asp:TableCell>Player ID<span class="required">*</span>:</asp:TableCell>

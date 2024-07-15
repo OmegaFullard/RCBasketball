@@ -11,7 +11,7 @@ Public Class rptPlayers
     'Private frmRequest As String = String.Empty
     Private m_PlayerID As Integer = 0
     Private theSearch As New clsSearch
-    Private strPlayerID As String = String.Empty
+
 
     Public Property PlayerID As Integer
         Get
@@ -47,15 +47,18 @@ Public Class rptPlayers
 
             ReportViewer1.ProcessingMode = ProcessingMode.Local
             ReportViewer1.LocalReport.ReportPath = Server.MapPath(theSearch.ReportPath)
-            If theSearch.PlayerID = 0 Then theSearch.PlayerID = "XXXXXX"
+            If theSearch.PlayerID = 0 Then theSearch.PlayerID = 0
+            If IsNumeric(theSearch.PlayerID) Then Int32.Parse(theSearch.PlayerID)
 
-            dtReport = thePlayers.GetPlayersByID(theSearch.PlayerID)
+            Dim numPlayerID As Integer = Int32.Parse(theSearch.PlayerID)
+            dtReport = thePlayers.GetPlayersByID(numPlayerID)
 
             strTitle = "Royal City Basketball: " & " Players Report"
 
 
 
             ReportDataSource.Value = dtReport
+
             Dim param1 As New ReportParameter("Title", strTitle)
             ReportViewer1.LocalReport.SetParameters(New ReportParameter() {param1})
 

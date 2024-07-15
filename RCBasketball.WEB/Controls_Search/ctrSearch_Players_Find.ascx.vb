@@ -4,7 +4,7 @@
 
     Private m_PlayerID As Integer = 0
 
-    Public Property PlayerID As Integer
+    Public Property PlayerID() As Integer
         Get
             Return m_PlayerID
         End Get

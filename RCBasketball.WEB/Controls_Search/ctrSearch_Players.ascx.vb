@@ -1,13 +1,13 @@
 ﻿Public Class ctrSearch_Players
     Inherits System.Web.UI.UserControl
 
-    Private m_PlayerID As Integer = 0
+    Private m_PlayerID As String = String.Empty
 
-    Public Property PlayerID As Integer
+    Public Property PlayerID() As String
         Get
             Return m_PlayerID
         End Get
-        Set(ByVal value As Integer)
+        Set(ByVal value As String)
             m_PlayerID = value
         End Set
     End Property

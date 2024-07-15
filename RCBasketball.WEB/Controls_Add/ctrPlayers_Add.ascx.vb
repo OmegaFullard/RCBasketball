@@ -5,14 +5,14 @@ Imports System.Web
 
 Public Class ctrPlayers_Add
     Inherits System.Web.UI.UserControl
-    Private m_PlayerID As Integer = 0
+    Private m_PlayerID As String = String.Empty
     Private m_PlayersList As String = String.Empty
 
-    Public Property PlayerID As Integer
+    Public Property PlayerID() As String
         Get
             Return m_PlayerID
         End Get
-        Set(ByVal value As Integer)
+        Set(ByVal value As String)
             m_PlayerID = value
         End Set
     End Property
@@ -25,24 +25,8 @@ Public Class ctrPlayers_Add
         End Set
     End Property
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Dim thePlayers As New clsRCBasketball
-        Dim tblPlayers As New DAL.RCBasketball.PlayersDataTable
+        PopulateControls()
 
-        Try
-
-            If (Page.IsPostBack) Then
-                If Request.Form("ctl00$MainContent$ctrPlayers_Add$btnAdd") = "Add" Then
-
-                    AddPlayers()
-
-                End If
-            Else
-                PopulateControls()
-            End If
-
-        Catch ex As Exception
-            Throw
-        End Try
 
 
     End Sub
@@ -70,16 +54,16 @@ Public Class ctrPlayers_Add
 
             Try
                 Dim theRCBasketball As New clsRCBasketball
-                theRCBasketball.AddPlayer(thisPlayers)
-                lblResult.Text = "Player data has been added"
+                m_PlayerID = theRCBasketball.AddPlayer(thisPlayers)
+
             Catch ex As SqlException
-                If ex.Number = 2627 Then
-                    lblResult.Text = "Player already exist!"
-                Else
-                    Throw New ApplicationException(ex.Message)
-                End If
+
+                Throw New ApplicationException(ex.Message)
+
             End Try
 
+            lblResult.Text = "Player data has been added"
+            Me.lblPlayerID.Text = "ID" + m_PlayerID
 
         Catch ex As Exception
             Dim SendError As New clsRCBasketball_Web

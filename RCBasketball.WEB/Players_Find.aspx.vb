@@ -12,8 +12,8 @@ Public Class Players_Find
             If (Page.IsPostBack) Then
 
                 If Request.Form("ctl00$MainContent$ctrSearch_Players_Find$btnSearch") = "Search" Then
-                    ctrSearch_Players.PopulateSearchControl()
-                    Me.ctrPlayers_Find.PlayerID = ctrSearch_Players.PlayerID
+                    ctrSearch_Players_Find.PopulateSearchControl()
+                    Me.ctrPlayers_Find.PlayerID = ctrSearch_Players_Find.PlayerID
                 End If
             End If
 

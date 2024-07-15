@@ -8,13 +8,13 @@ Public Class ctrPlayers_Find
 
     Inherits System.Web.UI.UserControl
 
-    Dim m_PlayerID As Integer = 0
+    Private m_PlayerID As String = String.Empty
 
-    Public Property PlayerID As Integer
+    Public Property PlayerID() As String
         Get
             Return m_PlayerID
         End Get
-        Set(ByVal value As Integer)
+        Set(ByVal value As String)
             m_PlayerID = value
         End Set
     End Property
@@ -27,7 +27,7 @@ Public Class ctrPlayers_Find
 
         Try
 
-            If Request.Form("ctl00$MainContent$ctrPlayers_Find$btnSearch") = "Search" Then Me.ctrHiddebField.Value = Convert.ToString(m_PlayerID)
+            If Request.Form("ctl00$MainContent$ctrPlayers_Find$btnSearch") = "Search" Then Me.ctrHiddebField.Value = m_PlayerID.Trim
 
             If (Page.IsPostBack) And Me.ctrHiddebField.Value.Length > 0 Then
                 tblPlayers = thePlayers.GetPlayersByID("%" + Me.ctrHiddebField.Value + "%")

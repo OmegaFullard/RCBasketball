@@ -7,13 +7,13 @@ Public Class ctrPlayers_Update
 
     Private m_FirstN As String = String.Empty
     Private m_LastN As String = String.Empty
-    Private m_PlayerID As Integer = 0
+    Private m_PlayerID As String = String.Empty
 
-    Public Property PlayerID As Integer
+    Public Property PlayerID() As String
         Get
             Return m_PlayerID
         End Get
-        Set(ByVal value As Integer)
+        Set(ByVal value As String)
             m_PlayerID = value
         End Set
     End Property
@@ -36,29 +36,35 @@ Public Class ctrPlayers_Update
         End Set
     End Property
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Dim thePlayers As New clsRCBasketball
-        Dim tblPlayers As New DAL.RCBasketball.PlayersDataTable
+
 
         Try
 
             If (Page.IsPostBack) Then
-                If Request.Form("ctl00$MainContent$ctrPlayers_Update$btnUpdate") = "Update" Then
+                If m_PlayerID.Length > 0 Then Me.lblPlayerID.Text = "ID" + m_PlayerID
+                If Me.lblPlayerID.Text.Length = 2 Then Exit Sub
 
+                Me.lblResult.Text = String.Empty
+
+                If Request.Form("ctl00$MainContent$ctrPlayers_Update$btnUpdate") = "Update" Then
+                    If Me.lblPlayerID.Text.Length < 2 Then Me.lblResult.Text = "Player ID is Messing!" : Exit Sub
                     UpdatePlayer()
 
-                Else
-                    If txtPlayerID.Text.Trim.Length = 0 Or m_FirstN.Length = 0 Then Exit Sub
+                ElseIf Request.Form("ct100$MainContent$ctrSearch_Players$btnSearch") = "Search" Then
+                    Dim thePlayers As New clsRCBasketball
+                    Dim tblPlayers As DAL.RCBasketball.PlayersDataTable = thePlayers.GetPlayersByID(CInt(Replace(Me.lblPlayerID.Text, "ID", "")))
 
-                    tblPlayers = thePlayers.GetPlayersByFirstLast(m_FirstN, m_LastN)
                     If tblPlayers.Count = 0 Then CleanControls() : Exit Sub
+                    Me.btnUpdate.Enabled = True
+
 
                     With tblPlayers(0)
 
 
-
+                        cmbStates.Value = .State
                         Me.txtFirstN.Text = .FirstN : Me.txtLastN.Text = .LastN : Me.txtPlayerID.Text = .PlayerID : If Not .IsAddressNull Then txtAddress.Text = .Address.Trim
 
-                        If Not .IsCityNull Then Me.txtCity.Text = .City.Trim : If Not .IsStateNull Then Me.cmbStates.Text = .State.Trim
+                        If Not .IsCityNull Then Me.txtCity.Text = .City.Trim
                         If Not .IsZipNull Then
                             If .Zip.Trim.Length > 5 Then txtZip.Text = .Zip.Trim.Substring(0, 5) Else txtZip.Text = .Zip.Trim
                         End If
@@ -69,9 +75,6 @@ Public Class ctrPlayers_Update
 
 
                     End With
-
-
-                    Me.btnUpdate.Enabled = True
 
                 End If
             Else

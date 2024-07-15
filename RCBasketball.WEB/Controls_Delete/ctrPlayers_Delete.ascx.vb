@@ -7,13 +7,13 @@ Imports RCBasketball.DAL.RCBasketball
 Public Class ctrPlayers_Delete
     Inherits System.Web.UI.UserControl
 
-    Dim m_PlayerID As Integer = 0
 
-    Public Property PlayerID As Integer
+    Dim m_PlayerID As String = String.Empty
+    Public Property PlayerID() As String
         Get
             Return m_PlayerID
         End Get
-        Set(ByVal value As Integer)
+        Set(ByVal value As String)
             m_PlayerID = value
         End Set
     End Property
@@ -32,7 +32,7 @@ Public Class ctrPlayers_Delete
                 Else
                     If txtPlayerID.Text.Trim.Length = 0 Then Exit Sub
 
-                    tblPlayers = thePlayers.GetPlayer()
+                    tblPlayers = thePlayers.GetPlayersByID(m_PlayerID)
                     If tblPlayers.Count = 0 Then CleanupControls() : Exit Sub
 
                     With tblPlayers(0)
@@ -107,6 +107,10 @@ Public Class ctrPlayers_Delete
         txtPhone.Text = String.Empty : txtEmail.Text = String.Empty
 
 
+    End Sub
+
+    Public Sub CleanResultControl()
+        Me.lblResult.Text = String.Empty
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
