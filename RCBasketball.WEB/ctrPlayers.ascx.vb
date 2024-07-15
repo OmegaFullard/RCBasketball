@@ -16,17 +16,19 @@ Public Class ctrPlayers
         End Set
     End Property
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Dim thePlayers As New clsRCBasketball
+        Dim thePlayers As clsRCBasketball = New clsRCBasketball()
         Dim tblPlayers As New DAL.RCBasketball.PlayersDataTable
 
         Try
 
-            If Request.Form("ctl00$MainContent$ctrSearch_Players$btnSearch") = "Search" Then Me.ctrHiddebField.Value = Convert.ToString(m_PlayerID)
+            If Request.Form("ctl00$MainContent$ctrSearch_Players$btnSearch") = "Search" Then
+                Me.ctrHiddebField.Value = Convert.ToString(m_PlayerID)
+            End If
 
-            If (Page.IsPostBack) And Me.ctrHiddebField.Value.Length > 0 Then
-                tblPlayers = thePlayers.GetPlayersByID("%" + Me.ctrHiddebField.Value + "%")
+            If (Page.IsPostBack) And Me.lblSearchResult.Text.Length > 0 Then
+                tblPlayers = thePlayers.GetPlayersByID(m_PlayerID)
             Else
-                tblPlayers = thePlayers.GetPlayer
+                tblPlayers = thePlayers.GetPlayer()
             End If
 
 

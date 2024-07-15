@@ -21,26 +21,22 @@ Public Class ctrPlayers_Find
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load, grdPlayers.Load
 
 
+        Dim thePlayers As clsRCBasketball = New clsRCBasketball()
+        Dim tblPlayers As PlayersDataTable = New DAL.RCBasketball.PlayersDataTable()
 
-        Dim thePlayers As New clsRCBasketball
-        Dim tblPlayers As New DAL.RCBasketball.PlayersDataTable
 
         Try
+            If Request.Form("ctl00$MainContent$ctrSearch_Players_Find$btnSearch") = "Search" Then Me.lblSearchResult.Text = "ID" & m_PlayerID
 
-            If Request.Form("ctl00$MainContent$ctrPlayers_Find$btnSearch") = "Search" Then Me.ctrHiddebField.Value = m_PlayerID.Trim
-
-            If (Page.IsPostBack) And Me.ctrHiddebField.Value.Length > 0 Then
-                tblPlayers = thePlayers.GetPlayersByID("%" + Me.ctrHiddebField.Value + "%")
+            If (Page.IsPostBack) And Me.lblSearchResult.Text.Length > 0 Then
+                tblPlayers = CType(thePlayers.GetPlayersByID(Integer.Parse(Me.lblSearchResult.Text.Replace("ID", ""))), PlayersDataTable)
             Else
-                tblPlayers = thePlayers.GetPlayer
+                tblPlayers = CType(thePlayers.GetPlayer(), PlayersDataTable)
             End If
 
-
-            Me.lblSearchResult.Text = tblPlayers.Rows.Count.ToString + " Result(s)"
+            Me.lblSearchResult.Text = tblPlayers.Rows.Count.ToString()
             Me.grdPlayers.DataSource = tblPlayers.DefaultView
             Me.grdPlayers.DataBind()
-
-
         Catch ex As Exception
             Dim SendError As New clsRCBasketball_Web
             Dim NotificationBody As String = ex.Message & "  " & ex.StackTrace

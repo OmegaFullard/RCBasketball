@@ -41,13 +41,13 @@ Public Class rptPlayers
 
             Dim ReportDataSource As ReportDataSource = New ReportDataSource()
             Dim strTitle As String = String.Empty
-            Dim dtReport As rptPlayersDataTable
+            Dim dtReport As PlayersDataTable
 
             ReportDataSource.Name = "DataSet1"
 
             ReportViewer1.ProcessingMode = ProcessingMode.Local
             ReportViewer1.LocalReport.ReportPath = Server.MapPath(theSearch.ReportPath)
-            If theSearch.PlayerID = 0 Then theSearch.PlayerID = 0
+            If theSearch.PlayerID.ToString().Length = 0 Then theSearch.PlayerID = Integer.Parse("xxxxxx")
             If IsNumeric(theSearch.PlayerID) Then Int32.Parse(theSearch.PlayerID)
 
             Dim numPlayerID As Integer = Int32.Parse(theSearch.PlayerID)

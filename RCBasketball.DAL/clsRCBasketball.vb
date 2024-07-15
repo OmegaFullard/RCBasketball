@@ -23,8 +23,8 @@ Public Class clsRCBasketball
 
     Public Function GetPlayer() As DataTable
         Try
-            Dim adpPlayers As New PlayersTableAdapter
-            Dim tblPlayers As RCBasketball.PlayersDataTable = adpPlayers.GetData
+            Dim adpPlayers As PlayersTableAdapter = New PlayersTableAdapter()
+            Dim tblPlayers As RCBasketball.PlayersDataTable = adpPlayers.GetData()
 
             Return tblPlayers
 
@@ -50,7 +50,7 @@ Public Class clsRCBasketball
 
     Public Function GetPlayersByID(ByVal PlayerID As Integer) As DataTable
         Try
-            Dim adpPlayers As New PlayersTableAdapter
+            Dim adpPlayers As PlayersTableAdapter = New PlayersTableAdapter()
             Dim tblPlayers As RCBasketball.PlayersDataTable = adpPlayers.GetDataByPlayerID(PlayerID)
 
             Return tblPlayers
@@ -97,8 +97,8 @@ Public Class clsRCBasketball
     Public Function GetPlayersReport() As DataTable
         Try
 
-            Dim adpPlayersReport As New rptPlayersTableAdapter
-            Dim tblPlayers As rptPlayersDataTable = adpPlayersReport.GetData
+            Dim adpPlayersReport As New PlayersTableAdapter
+            Dim tblPlayers As PlayersDataTable = adpPlayersReport.GetData
 
             Return tblPlayers
 
@@ -110,8 +110,8 @@ Public Class clsRCBasketball
     Public Function GetPReportByID(ByVal strPlayerID As String) As DataTable
         Try
 
-            Dim adpPReport As New rptPlayersTableAdapter
-            Dim tblPlayers As rptPlayersDataTable = adpPReport.GetDataByPlayerID(strPlayerID)
+            Dim adpPReport As New PlayersTableAdapter
+            Dim tblPlayers As PlayersDataTable = adpPReport.GetDataByPlayerID(strPlayerID)
 
             Return tblPlayers
 
