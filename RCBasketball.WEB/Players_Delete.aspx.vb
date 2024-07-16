@@ -1,15 +1,25 @@
 ﻿Public Class Players_Delete
     Inherits System.Web.UI.Page
-    Private m_PlayerID As Integer = 0
+    Private m_PlayerID As String = String.Empty
+
+
+    Public Property PlayerID() As String
+        Get
+            Return m_PlayerID
+        End Get
+        Set(ByVal value As String)
+            m_PlayerID = value
+        End Set
+    End Property
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Try
 
             If (Page.IsPostBack) Then
-                Dim strPlayer As String = (Request.Form("ctl00_MainContent_ctrPlayers_Update_PlayerID_ClientState").Replace("""", "").Replace("{", "").Replace("}", "").Replace(",", "").Replace("text", "").Replace("value", "").Replace("%20", " ").Replace("%26", "&"))
+                Dim m_PlayerID As String = (Request.Form("ctl00_MainContent_ctrSearchPlayers_Update_cmbPlayers_ClientState")).Replace("""", "").Replace("{", "").Replace("}", "").Replace(",", "").Replace("text", "").Replace("value", "").Replace("%20", " ").Replace("%26", "&")
 
-                If strPlayer.Length > 4 Then
-                    Dim arrPlayers As String() = strPlayer.Split(Convert.ToChar(":"))
+                If m_PlayerID.Length > 0 Then
+                    Dim arrPlayers As String() = m_PlayerID.Split(Convert.ToChar(":"))
                     Me.ctrPlayers_Delete.PlayerID = Integer.Parse(arrPlayers(1))
                     Me.ctrSearch_Players_Update.ClearControl()
                     Me.ctrPlayers_Delete.CleanResultControl()

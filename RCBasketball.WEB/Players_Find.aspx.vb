@@ -13,7 +13,7 @@ Public Class Players_Find
 
                 If Request.Form("ctl00$MainContent$ctrSearch_Players$btnSearch") = "Search" Then
                     ctrSearch_Players.PopulateSearchControl()
-                    Me.ctrPlayers_Find.PlayerID = ctrSearch_Players.PlayerID
+                    ctrPlayers_Find.PlayerID = ctrSearch_Players.PlayerID
                 End If
             End If
 

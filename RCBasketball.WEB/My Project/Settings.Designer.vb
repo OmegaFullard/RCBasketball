@@ -120,8 +120,7 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=OIT-L-BY10S73\SQLEXPRESS;Initial Catalog=RCBasketball;Integrated Secu"& _ 
-            "rity=True")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=OIT-L-BY10S73\SQLEXPRESS;Initial Catalog=RCBasketball;")>  _
         Public ReadOnly Property SQL_Server_Speed_sh() As String
             Get
                 Return CType(Me("SQL_Server_Speed_sh"),String)

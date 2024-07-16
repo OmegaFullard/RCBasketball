@@ -43,7 +43,8 @@ Public Class rptPlayers
             Dim strTitle As String = String.Empty
             Dim dtReport As PlayersDataTable
 
-            ReportDataSource.Name = "DataSet1"
+            'ReportDataSource.Name = "DataSet1"
+            ReportDataSource.Name = "RCBasketballDataSet"
 
             ReportViewer1.ProcessingMode = ProcessingMode.Local
             ReportViewer1.LocalReport.ReportPath = Server.MapPath(theSearch.ReportPath)

@@ -22,10 +22,9 @@ Public Class Players_Update
             If (Page.IsPostBack) Then
 
 
-                Dim strPlayer As String = (Request.Form("ctl00_MainContent_ctrSearch_Players_Update_cmbPlayer_ClientState")).Replace("""", "").Replace("{", "").Replace("}", "").Replace(",", "").Replace("text", "").Replace("value", "").Replace("%20", " ").Replace("%26", "&")
-
-                If strPlayer.Length > 2 Then
-                    Dim arrPlayers As String() = strPlayer.Split(Convert.ToChar(":"))
+                Dim m_PlayerID As String = (Request.Form("ctl00_MainContent_ctrSearch_Players_Update_cmbPlayer_ClientState").Replace("""", "").Replace("{", "").Replace("}", "").Replace(",", "").Replace("text", "").Replace("value", "").Replace("%20", " ").Replace("%26", "&"))
+                If m_PlayerID.Length > 0 Then
+                    Dim arrPlayers As String() = m_PlayerID.Split(Convert.ToChar(":"))
                     Me.ctrPlayers_Update.PlayerID = Integer.Parse(arrPlayers(1))
                     Me.ctrSearch_Players_Update.ClearControl()
                 End If

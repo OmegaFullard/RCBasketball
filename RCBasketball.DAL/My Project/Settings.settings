@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="RCBasketballConnectionString" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">Data Source=OIT-L-BY10S73\SQLEXPRESS;Initial Catalog=RCBasketball;Integrated Security=True</Value>
+      <Value Profile="(Default)">Data Source=OIT-L-BY10S73\SQLEXPRESS;Initial Catalog=RCBasketball;</Value>
     </Setting>
   </Settings>
 </SettingsFile>

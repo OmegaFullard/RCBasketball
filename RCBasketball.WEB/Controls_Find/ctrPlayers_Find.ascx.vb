@@ -8,41 +8,42 @@ Public Class ctrPlayers_Find
 
     Inherits System.Web.UI.UserControl
 
-    Private m_PlayerID As String = String.Empty
+    Dim m_PlayerID As Integer = 0
 
-    Public Property PlayerID() As String
+    Public Property PlayerID As Integer
         Get
             Return m_PlayerID
         End Get
-        Set(ByVal value As String)
+        Set(ByVal value As Integer)
             m_PlayerID = value
         End Set
     End Property
-    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load, grdPlayers.Load
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
+        Dim thePlayers As clsRCBasketball = New clsRCBasketball()
+        Dim tblPlayers As New DAL.RCBasketball.PlayersDataTable
+
+        Try
+
+            If Request.Form("ctl00$MainContent$ctrSearch_Players$btnSearch") = "Search" Then
+                Me.ctrHiddebField.Value = Convert.ToString(m_PlayerID)
+            End If
+
+            If (Page.IsPostBack) And Me.lblSearchResult.Text.Length > 0 Then
+                tblPlayers = thePlayers.GetPlayersByID(m_PlayerID)
+            Else
+                tblPlayers = thePlayers.GetPlayer()
+            End If
 
 
+            Me.lblSearchResult.Text = tblPlayers.Rows.Count.ToString + " Result(s)"
+            Me.grdPlayers.DataSource = tblPlayers.DefaultView
+            Me.grdPlayers.DataBind()
 
-
-        If (Page.IsPostBack) Then
-
-            If m_PlayerID.Length > 0 Then Me.lblPlayerID.Text = "ID" + m_PlayerID
-            If Me.lblPlayerID.Text.Length = 2 Then Exit Sub
-
-            Try
-
-                Dim thePlayers As New clsRCBasketball
-                Dim tblPlayers As PlayersDataTable = thePlayers.GetPlayersByID(CInt(Replace(Me.lblPlayerID.Text, "ID", "")))
-                If Request.Form("ctl00$MainContent$ctrSearch_Players_Find$btnSearch") = "Search" Then Me.lblSearchResult.Text = "ID" & m_PlayerID
-                If tblPlayers.Count = 0 Then Exit Sub
-
-
-
-                Me.grdPlayers.DataSource = thePlayers
-                Me.grdPlayers.DataBind()
-            Catch ex As Exception
+        Catch ex As Exception
                 Throw
             End Try
-        End If
+
     End Sub
 
     Protected Sub grdPlayers_PageIndexChanging(sender As Object, e As GridViewPageEventArgs) Handles grdPlayers.PageIndexChanging

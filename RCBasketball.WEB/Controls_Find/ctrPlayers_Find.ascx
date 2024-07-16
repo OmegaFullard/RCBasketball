@@ -6,7 +6,7 @@
            <div class="Heading" >Players List</div>
           
     
-           <div> <asp:Label ID="lblPlayerID" runat="server" Text=""></asp:Label></div><br />
+             <div><asp:HiddenField ID="ctrHiddebField" runat="server" /></div><br />
            <div style="padding-bottom:10px; font-weight:400"> <asp:Label ID="lblSearchResult" runat="server" Text=""></asp:Label></div>
            <asp:GridView ID="grdPlayers" runat="server" 
                     AutoGenerateColumns="False" 
@@ -26,16 +26,16 @@
                                        ReadOnly="True"  Visible="True" />
                                      <asp:BoundField DataField="Address" HeaderText="Address" HtmlEncode="False" ItemStyle-Width="100"
                                        ReadOnly="True"  Visible="True" />                                      
-                                      <asp:BoundField DataField="ct_city" HeaderText="City" HtmlEncode="False" ItemStyle-Width="100"
+                                      <asp:BoundField DataField="City" HeaderText="City" HtmlEncode="False" ItemStyle-Width="100"
                                        ReadOnly="True"  Visible="True" />
-                                     <asp:BoundField DataField="ct_state" HeaderText="State" HtmlEncode="False" ItemStyle-Width="100"
+                                     <asp:BoundField DataField="State" HeaderText="State" HtmlEncode="False" ItemStyle-Width="100"
                                        ReadOnly="True"  Visible="True" />
-                                     <asp:BoundField DataField="ct_zip" HeaderText="Zip" HtmlEncode="False" ItemStyle-Width="100"
+                                     <asp:BoundField DataField="Zip" HeaderText="Zip" HtmlEncode="False" ItemStyle-Width="100"
                                        ReadOnly="True"  Visible="True" />
 									<asp:BoundField DataField="Phone" HeaderText="Phone" HtmlEncode="False"  ItemStyle-Width="100"
-                                       ReadOnly="True"  Visible="True" DataFormatString="(###)-#######" />
+                                       ReadOnly="True"  Visible="True" />
                                     <asp:BoundField DataField="Email" HeaderText="Email" HtmlEncode="False" ItemStyle-Width="100"
-                                       ReadOnly="True"  Visible="True" DataFormatString='\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*' />
+                                       ReadOnly="True"  Visible="True" />
                                  
                                      
                                  </Columns>

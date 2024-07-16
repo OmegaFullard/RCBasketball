@@ -8,7 +8,7 @@ Public Class ctrPlayers_Delete
     Inherits System.Web.UI.UserControl
 
 
-    Dim m_PlayerID As String = String.Empty
+    Private m_PlayerID As String = String.Empty
     Public Property PlayerID() As String
         Get
             Return m_PlayerID
@@ -47,7 +47,7 @@ Public Class ctrPlayers_Delete
                             If .Zip.Trim.Length > 5 Then txtZip.Text = .Zip.Trim.Substring(0, 5) Else txtZip.Text = .Zip.Trim
                         End If
 
-                        If Not .IsPhoneNull Then txtPhone.Text = .Phone.Trim
+                        If Not .IsPhoneNull Then txtPhone.Text = .Phone
                         If Not .IsEmailNull Then txtEmail.Text = .Email
 
 
