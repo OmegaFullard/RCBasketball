@@ -1,4 +1,8 @@
 ﻿Imports System.Web.Optimization
+Imports RCBasketball.DAL
+Imports RCBasketball.WEB
+
+
 
 Public Class Global_asax
     Inherits HttpApplication

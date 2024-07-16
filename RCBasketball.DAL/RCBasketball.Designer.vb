@@ -2614,14 +2614,14 @@ Namespace RCBasketballTableAdapters
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Players] WHERE (([PlayerID] = @Original_PlayerID))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [Players] WHERE (([PlayerID] = @Original_PlayerID))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PlayerID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PlayerID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Players] ([FirstN], [LastN], [Address], [City], [State], [Zip]"& _ 
-                ", [Phone], [Email]) VALUES (@FirstN, @LastN, @Address, @City, @State, @Zip, @Pho"& _ 
-                "ne, @Email)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [Players] ([FirstN], [LastN], [Address], [City], [State], [Zip], [Pho"& _ 
+                "ne], [Email]) VALUES (@FirstN, @LastN, @Address, @City, @State, @Zip, @Phone, @E"& _ 
+                "mail)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@FirstN", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FirstN", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@LastN", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LastN", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -2633,9 +2633,9 @@ Namespace RCBasketballTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Email", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Email", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Players] SET [FirstN] = @FirstN, [LastN] = @LastN, [Address] = @Add"& _ 
-                "ress, [City] = @City, [State] = @State, [Zip] = @Zip, [Phone] = @Phone, [Email] "& _ 
-                "= @Email WHERE (([PlayerID] = @Original_PlayerID))"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [Players] SET [FirstN] = @FirstN, [LastN] = @LastN, [Address] = @Address, "& _ 
+                "[City] = @City, [State] = @State, [Zip] = @Zip, [Phone] = @Phone, [Email] = @Ema"& _ 
+                "il WHERE (([PlayerID] = @Original_PlayerID))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@FirstN", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FirstN", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@LastN", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LastN", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -2661,19 +2661,20 @@ Namespace RCBasketballTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(2) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT PlayerID, FirstN, LastN, Address, City, State, Zip, Phone, Email FROM dbo."& _ 
-                "Players"
+            Me._commandCollection(0).CommandText = "SELECT PlayerID, FirstN, LastN, Address, City, State, Zip, Phone, Email"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM   P"& _ 
+                "layers"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT PlayerID, FirstN, LastN, Address, City, State, Zip, Phone, Email"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM   P"& _ 
-                "layers"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE (FirstN = @FirstN) AND (LastN = @LastN)"
+            Me._commandCollection(1).CommandText = "SELECT Address, City, Email, FirstN, LastN, Phone, PlayerID, State, Zip FROM Play"& _ 
+                "ers WHERE (FirstN = @FirstN) AND (LastN = @LastN)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@FirstN", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "FirstN", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@LastN", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "LastN", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "SELECT * FROM dbo.Players"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE  PlayerID = @PlayerID"
+            Me._commandCollection(2).CommandText = "SELECT Address, City, Email, FirstN, LastN, Phone, PlayerID, State, Zip FROM Play"& _ 
+                "ers WHERE (PlayerID = @PlayerID)"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PlayerID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "PlayerID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
