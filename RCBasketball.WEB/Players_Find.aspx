@@ -25,16 +25,7 @@
                                     </asp:TableRow>
                               
                               </asp:Table>
-                               <div class="clear hideSkiplink">
-                                          <asp:Menu ID="NavigationMenu" runat="server" CssClass="sub_menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
-                                              <Items>
-                                                  <asp:MenuItem Text="Find" NavigateUrl="Players_Find.aspx"></asp:MenuItem> 
-                                                  <asp:MenuItem  Text="Add"  NavigateUrl="Players_Add.aspx"></asp:MenuItem>
-                                                 <asp:MenuItem Text="Update" NavigateUrl="Players_Update.aspx"></asp:MenuItem> 
-                                                 <asp:MenuItem Text="Delete" NavigateUrl="Players_Delete.aspx"></asp:MenuItem> 
-                                              </Items>
-                                           </asp:Menu>
-                                 </div>
+                             
 
                                <uc1:ctrPlayers_Find runat="server" id="ctrPlayers_Find" />
                </div>          

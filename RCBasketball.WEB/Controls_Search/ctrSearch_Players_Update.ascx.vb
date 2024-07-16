@@ -22,7 +22,7 @@ Public Class ctrSearch_Players_Update
 
         If Not (Page.IsPostBack) Then
 
-            cmbPlayer.DataSource = thePlayers.GetPlayer()
+            cmbPlayer.DataSource = thePlayers.GetPlayersList
             cmbPlayer.DataTextField = "PlayerID" : cmbPlayer.DataValueField = "FirstN"
             cmbPlayer.DataBind()
 

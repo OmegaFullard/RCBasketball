@@ -25,11 +25,5 @@ Public Class Players_Find
         End Try
     End Sub
 
-    Public Overrides Property EnableEventValidation As Boolean
-        Get
-            Return False
-        End Get
-        Set(ByVal value As Boolean)
-        End Set
-    End Property
+
 End Class

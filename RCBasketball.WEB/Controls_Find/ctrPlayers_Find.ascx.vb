@@ -21,29 +21,28 @@ Public Class ctrPlayers_Find
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load, grdPlayers.Load
 
 
-        Dim thePlayers As clsRCBasketball = New clsRCBasketball()
-        Dim tblPlayers As PlayersDataTable = New DAL.RCBasketball.PlayersDataTable()
 
 
-        Try
-            If Request.Form("ctl00$MainContent$ctrSearch_Players_Find$btnSearch") = "Search" Then Me.lblSearchResult.Text = "ID" & m_PlayerID
+        If (Page.IsPostBack) Then
 
-            If (Page.IsPostBack) And Me.lblSearchResult.Text.Length > 0 Then
-                tblPlayers = CType(thePlayers.GetPlayersByID(Integer.Parse(Me.lblSearchResult.Text.Replace("ID", ""))), PlayersDataTable)
-            Else
-                tblPlayers = CType(thePlayers.GetPlayer(), PlayersDataTable)
-            End If
+            If m_PlayerID.Length > 0 Then Me.lblPlayerID.Text = "ID" + m_PlayerID
+            If Me.lblPlayerID.Text.Length = 2 Then Exit Sub
 
-            Me.lblSearchResult.Text = tblPlayers.Rows.Count.ToString()
-            Me.grdPlayers.DataSource = tblPlayers.DefaultView
-            Me.grdPlayers.DataBind()
-        Catch ex As Exception
-            Dim SendError As New clsRCBasketball_Web
-            Dim NotificationBody As String = ex.Message & "  " & ex.StackTrace
-            SendError.SendMailMessage(NotificationBody)
-            Response.Redirect("ErrorPage.aspx", False)
-        End Try
+            Try
 
+                Dim thePlayers As New clsRCBasketball
+                Dim tblPlayers As PlayersDataTable = thePlayers.GetPlayersByID(CInt(Replace(Me.lblPlayerID.Text, "ID", "")))
+                If Request.Form("ctl00$MainContent$ctrSearch_Players_Find$btnSearch") = "Search" Then Me.lblSearchResult.Text = "ID" & m_PlayerID
+                If tblPlayers.Count = 0 Then Exit Sub
+
+
+
+                Me.grdPlayers.DataSource = thePlayers
+                Me.grdPlayers.DataBind()
+            Catch ex As Exception
+                Throw
+            End Try
+        End If
     End Sub
 
     Protected Sub grdPlayers_PageIndexChanging(sender As Object, e As GridViewPageEventArgs) Handles grdPlayers.PageIndexChanging

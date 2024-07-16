@@ -50,15 +50,6 @@ Partial Public Class Players_Find
     Protected WithEvents ctrSearch_Players As Global.RCBasketball.WEB.ctrSearch_Players
 
     '''<summary>
-    '''NavigationMenu control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents NavigationMenu As Global.System.Web.UI.WebControls.Menu
-
-    '''<summary>
     '''ctrPlayers_Find control.
     '''</summary>
     '''<remarks>

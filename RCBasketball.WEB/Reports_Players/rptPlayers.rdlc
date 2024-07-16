@@ -16,7 +16,7 @@
     <DataSet Name="DataSet1">
       <Query>
         <DataSourceName>RCBasketballDataSet</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
+        <CommandText>SELECT * FROM dbo.Players</CommandText>
       </Query>
       <Fields>
         <Field Name="PlayerID">

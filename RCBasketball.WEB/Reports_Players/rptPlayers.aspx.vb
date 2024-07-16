@@ -9,18 +9,18 @@ Public Class rptPlayers
     Inherits System.Web.UI.Page
 
     'Private frmRequest As String = String.Empty
-    Private m_PlayerID As Integer = 0
+    'Private m_PlayerID As String = String.Empty
     Private theSearch As New clsSearch
 
 
-    Public Property PlayerID As Integer
-        Get
-            Return m_PlayerID
-        End Get
-        Set(ByVal value As Integer)
-            m_PlayerID = value
-        End Set
-    End Property
+    'Public Property PlayerID As String
+    '    Get
+    '        Return m_PlayerID
+    '    End Get
+    '    Set(ByVal value As String)
+    '        m_PlayerID = value
+    '    End Set
+    'End Property
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If (Page.IsPostBack) Then
             If Request.Form("ctl00$MainContent$ctrSearch_Players$btnSearch") = "Search" Then

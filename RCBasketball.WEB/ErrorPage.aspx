@@ -10,7 +10,7 @@
                                   request at this time.</p>
 
                        <ul class="error">
-                                <li class="error">Click the “Go Back” button to try again.</li>
+                                <li class="error">Click the “Go Home” button to try again.</li>
                         </ul>
 
                      <asp:Button ID="btnBack" runat="server" Text="Go Home"  CssClass="btnAction"  BorderStyle="None" />

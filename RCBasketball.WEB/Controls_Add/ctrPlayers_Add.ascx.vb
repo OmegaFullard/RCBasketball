@@ -2,6 +2,7 @@
 Imports RCBasketball.DAL
 Imports System.Linq
 Imports System.Web
+Imports RCBasketball.DAL.RCBasketball
 
 Public Class ctrPlayers_Add
     Inherits System.Web.UI.UserControl
@@ -25,9 +26,20 @@ Public Class ctrPlayers_Add
         End Set
     End Property
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        PopulateControls()
+        Dim theRCBasketball As New clsRCBasketball
+        Dim tblPlayers As New PlayersDataTable
 
-
+        Try
+            If (Page.IsPostBack) Then
+                If Request.Form("ct100$MainContent$ctrPlayers_Add$btnAdd") = "Add" Then
+                    AddPlayers()
+                End If
+            Else
+                PopulateControls()
+            End If
+        Catch ex As Exception
+            Throw
+        End Try
 
     End Sub
 
@@ -43,9 +55,9 @@ Public Class ctrPlayers_Add
                 If txtPlayerID.Text.Trim.Length = 0 Then Exit Sub
 
 
-                .PlayerID = txtPlayerID.Text.Trim : .FirstN = txtFirstN.Text.Trim : .LastN = txtLastN.Text.Trim
-                .Address = txtAddress.Text.Trim : .City = txtCity.Text.Trim : .State = cmbStates.Text : .Zip = txtZip.Text
-                .Phone = txtPhone.Text.Trim : .Email = txtEmail.Text.Trim
+                .PlayerID = txtPlayerID.Text : .FirstN = txtFirstN.Text : .LastN = txtLastN.Text
+                .Address = txtAddress.Text : .City = txtCity.Text : .State = cmbStates.Text : .Zip = txtZip.Text
+                .Phone = txtPhone.Text : .Email = txtEmail.Text
 
 
             End With
@@ -54,16 +66,17 @@ Public Class ctrPlayers_Add
 
             Try
                 Dim theRCBasketball As New clsRCBasketball
-                m_PlayerID = theRCBasketball.AddPlayer(thisPlayers)
-
+                theRCBasketball.AddPlayer(thisPlayers)
+                lblResult.Text = "Player data has been added"
             Catch ex As SqlException
 
-                Throw New ApplicationException(ex.Message)
+                If ex.Number = 2627 Then
+                    lblResult.Text = "Player already exist!"
+                Else
+                    Throw New ApplicationException(ex.Message)
+                End If
 
             End Try
-
-            lblResult.Text = "Player data has been added"
-            Me.lblPlayerID.Text = "ID" + m_PlayerID
 
         Catch ex As Exception
             Dim SendError As New clsRCBasketball_Web

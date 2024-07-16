@@ -30,10 +30,10 @@ Public Class ctrPlayers_Delete
                     DeletePlayers()
 
                 Else
-                    If txtPlayerID.Text.Trim.Length = 0 Then Exit Sub
+                    If m_PlayerID.Length = 0 Then Exit Sub
 
                     tblPlayers = thePlayers.GetPlayersByID(m_PlayerID)
-                    If tblPlayers.Count = 0 Then CleanupControls() : Exit Sub
+                    If tblPlayers.Count = 0 Then Exit Sub
 
                     With tblPlayers(0)
 
@@ -47,7 +47,7 @@ Public Class ctrPlayers_Delete
                             If .Zip.Trim.Length > 5 Then txtZip.Text = .Zip.Trim.Substring(0, 5) Else txtZip.Text = .Zip.Trim
                         End If
 
-                        If Not .IsPhoneNull Then txtPhone.Text = .Phone.Trim.Replace("-", "").Replace("(", "").Replace(")", "").Replace(" ", "")
+                        If Not .IsPhoneNull Then txtPhone.Text = .Phone.Trim
                         If Not .IsEmailNull Then txtEmail.Text = .Email
 
 

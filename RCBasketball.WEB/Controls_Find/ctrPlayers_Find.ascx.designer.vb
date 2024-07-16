@@ -14,13 +14,13 @@ Option Explicit On
 Partial Public Class ctrPlayers_Find
 
     '''<summary>
-    '''ctrHiddebField control.
+    '''lblPlayerID control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents ctrHiddebField As Global.System.Web.UI.WebControls.HiddenField
+    Protected WithEvents lblPlayerID As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''lblSearchResult control.

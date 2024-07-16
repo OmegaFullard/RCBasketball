@@ -36,27 +36,24 @@ Public Class ctrPlayers_Update
         End Set
     End Property
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-
+        Dim thePlayers As New clsRCBasketball
+        Dim tblPlayers As DAL.RCBasketball.PlayersDataTable
 
         Try
 
             If (Page.IsPostBack) Then
-                If m_PlayerID.Length > 0 Then Me.lblPlayerID.Text = "ID" + m_PlayerID
-                If Me.lblPlayerID.Text.Length = 2 Then Exit Sub
 
-                Me.lblResult.Text = String.Empty
 
                 If Request.Form("ctl00$MainContent$ctrPlayers_Update$btnUpdate") = "Update" Then
                     If Me.lblPlayerID.Text.Length < 2 Then Me.lblResult.Text = "Player ID is Messing!" : Exit Sub
                     UpdatePlayer()
 
-                ElseIf Request.Form("ct100$MainContent$ctrSearch_Players$btnSearch") = "Search" Then
-                    Dim thePlayers As New clsRCBasketball
-                    Dim tblPlayers As DAL.RCBasketball.PlayersDataTable = thePlayers.GetPlayersByID(CInt(Replace(Me.lblPlayerID.Text, "ID", "")))
+                Else
+                    If m_PlayerID.Length = 0 Then Exit Sub
 
-                    If tblPlayers.Count = 0 Then CleanControls() : Exit Sub
-                    Me.btnUpdate.Enabled = True
+                    tblPlayers = thePlayers.GetPlayersByID(m_PlayerID)
 
+                    If tblPlayers.Count = 0 Then Exit Sub
 
                     With tblPlayers(0)
 
@@ -72,12 +69,12 @@ Public Class ctrPlayers_Update
                         If Not .IsPhoneNull Then txtPhone.Text = .Phone
                         If Not .IsEmailNull Then txtEmail.Text = .Email
 
-
-
                     End With
 
+                    Me.btnUpdate.Enabled = True
+
                 End If
-            Else
+                    Else
                 PopulateControls()
             End If
 
@@ -108,7 +105,7 @@ Public Class ctrPlayers_Update
             With thisPlayers
                 If txtPlayerID.Text.Length = 0 Then Exit Sub
 
-                '.origPlayerID = txtPlayerID.Text.Trim
+                .origPlayerID = txtPlayerID.Text.Trim
                 .FirstN = txtFirstN.Text.Trim : .LastN = txtLastN.Text.Trim : .Address = txtAddress.Text.Trim
                 .City = txtCity.Text.Trim : .State = cmbStates.Text : .Zip = txtZip.Text : .Phone = txtPhone.Text.Trim : .Email = txtEmail.Text.Trim
 

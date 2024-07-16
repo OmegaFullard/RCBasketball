@@ -11,7 +11,7 @@
     Private m_Zip As String = String.Empty
     Private m_Phone As String = String.Empty
     Private m_Email As String = String.Empty
-    Private m_PlayerID As Integer = 0
+    Private m_PlayerID As String = String.Empty
 
 
     Public Property ReportName() As String
@@ -48,11 +48,11 @@
     End Property
 
 
-    Public Property PlayerID As Integer
+    Public Property PlayerID() As String
         Get
             Return m_PlayerID
         End Get
-        Set(ByVal value As Integer)
+        Set(ByVal value As String)
             m_PlayerID = value
         End Set
     End Property
@@ -74,7 +74,7 @@
         End Set
     End Property
 
-    Public Property Address As String
+    Public Property Address() As String
         Get
             Return m_Address
         End Get
@@ -83,7 +83,7 @@
         End Set
     End Property
 
-    Public Property City As String
+    Public Property City() As String
         Get
             Return m_City
         End Get
@@ -93,7 +93,7 @@
     End Property
 
 
-    Public Property State As String
+    Public Property State() As String
         Get
             Return m_State
         End Get
@@ -102,7 +102,7 @@
         End Set
     End Property
 
-    Public Property Zip As String
+    Public Property Zip() As String
         Get
             Return m_Zip
         End Get
@@ -111,7 +111,7 @@
         End Set
     End Property
 
-    Public Property Phone As String
+    Public Property Phone() As String
         Get
             Return m_Phone
         End Get
@@ -120,7 +120,7 @@
         End Set
     End Property
 
-    Public Property Email As String
+    Public Property Email() As String
         Get
             Return m_Email
         End Get
