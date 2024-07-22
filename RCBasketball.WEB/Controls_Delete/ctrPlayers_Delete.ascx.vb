@@ -39,16 +39,16 @@ Public Class ctrPlayers_Delete
 
 
 
-                        Me.txtPlayerID.Text = .PlayerID : If Not .IsFirstNNull Then Me.txtFirstN.Text = .FirstN
-                        If Not .IsLastNNull Then txtLastN.Text = .LastN : If Not .IsAddressNull Then txtAddress.Text = .Address.Trim
+                        Me.txtID.Text = .PlayerID : If Not .IsFirstNNull Then Me.txtFN.Text = .FirstN
+                        If Not .IsLastNNull Then txtLN.Text = .LastN : If Not .IsAddressNull Then txtAdd.Text = .Address.Trim
 
-                        If Not .IsCityNull Then Me.txtCity.Text = .City.Trim : If Not .IsStateNull Then Me.txtState.Text = .State.Trim
+                        If Not .IsCityNull Then Me.txtc.Text = .City.Trim : If Not .IsStateNull Then Me.cmbStates.Text = .State.Trim
                         If Not .IsZipNull Then
-                            If .Zip.Trim.Length > 5 Then txtZip.Text = .Zip.Trim.Substring(0, 5) Else txtZip.Text = .Zip.Trim
+                            If .Zip.Trim.Length > 5 Then txtZ.Text = .Zip.Trim.Substring(0, 5) Else txtZ.Text = .Zip.Trim
                         End If
 
-                        If Not .IsPhoneNull Then txtPhone.Text = .Phone
-                        If Not .IsEmailNull Then txtEmail.Text = .Email
+                        If Not .IsPhoneNull Then txtPh.Text = .Phone
+                        If Not .IsEmailNull Then txtE.Text = .Email
 
 
 
@@ -74,9 +74,9 @@ Public Class ctrPlayers_Delete
             Dim thisPlayers As New clsPlayers
 
             With thisPlayers
-                If txtPlayerID.Text.Trim.Length = 0 Then Exit Sub
+                If txtID.Text.Trim.Length = 0 Then Exit Sub
 
-                .PlayerID = txtPlayerID.Text.Trim
+                .PlayerID = txtID.Text.Trim
 
 
             End With
@@ -102,9 +102,9 @@ Public Class ctrPlayers_Delete
 
     Private Sub CleanupControls()
 
-        Me.txtPlayerID.Text = String.Empty : Me.txtFirstN.Text = String.Empty : Me.txtLastN.Text = String.Empty
-        txtAddress.Text = String.Empty : Me.txtCity.Text = String.Empty : Me.txtState.Text = String.Empty : txtZip.Text = String.Empty
-        txtPhone.Text = String.Empty : txtEmail.Text = String.Empty
+        Me.txtID.Text = String.Empty : Me.txtFN.Text = String.Empty : Me.txtLN.Text = String.Empty
+        txtAdd.Text = String.Empty : Me.txtc.Text = String.Empty : Me.cmbStates.Text = String.Empty : txtZ.Text = String.Empty
+        txtPh.Text = String.Empty : txtE.Text = String.Empty
 
 
     End Sub

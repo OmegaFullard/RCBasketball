@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="rptPlayers.aspx.vb" MasterPageFile="~/Site.Master" Inherits="RCBasketball.WEB.rptPlayers" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="rptPlayers.aspx.vb"  MasterPageFile="~/Site.Master" Inherits="RCBasketball.WEB.rptPlayers" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 <%@ Register assembly="Microsoft.ReportViewer.WebForms" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
 <%@ Register Src="~/Controls_Search/ctrSearch_Players.ascx" TagPrefix="uc1" TagName="ctrSearch_Players" %>
@@ -32,7 +32,7 @@
                                 SecondaryButtonHoverForegroundColor="" SplitterBackColor="" ToolbarDividerColor="" ToolbarForegroundColor="" ToolbarForegroundDisabledColor=""
                                 ToolbarHoverBackgroundColor="" ToolbarHoverForegroundColor="" ToolBarItemBorderColor="" ToolBarItemBorderStyle="Solid" ToolBarItemBorderWidth="1px"
                                 ToolBarItemHoverBackColor="" ToolBarItemPressedBorderColor="51, 102, 153" ToolBarItemPressedBorderStyle="Solid" ToolBarItemPressedBorderWidth="1px"
-                                ToolBarItemPressedHoverBackColor="153, 187, 226" Width="100%" OnLoad="ReportViewer1_Load" BorderColor="#5312b5" BorderStyle="Solid" BorderWidth="2px" Height="322px">
+                                ToolBarItemPressedHoverBackColor="153, 187, 226" Width="100%" OnLoad="ReportViewer1_Load" BorderStyle="None" Height="322px">
                              <LocalReport ReportPath="">
                                     <DataSources>
                                         <rsweb:ReportDataSource DataSourceId="" Name="" />

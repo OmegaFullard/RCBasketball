@@ -52,12 +52,12 @@ Public Class ctrPlayers_Add
             Dim thisPlayers As New clsPlayers
 
             With thisPlayers
-                If txtPlayerID.Text.Trim.Length = 0 Then Exit Sub
+                If txtID.Text.Trim.Length = 0 Then Exit Sub
 
 
-                .PlayerID = txtPlayerID.Text : .FirstN = txtFirstN.Text : .LastN = txtLastN.Text
-                .Address = txtAddress.Text : .City = txtCity.Text : .State = cmbStates.Text : .Zip = txtZip.Text
-                .Phone = txtPhone.Text : .Email = txtEmail.Text
+                .PlayerID = txtID.Text : .FirstN = txtFN.Text : .LastN = txtLN.Text
+                .Address = txtAdd.Text : .City = txtc.Text : .State = cmbStates.Text : .Zip = txtZ.Text
+                .Phone = txtPh.Text : .Email = txtE.Text
 
 
             End With
@@ -98,7 +98,7 @@ Public Class ctrPlayers_Add
         Me.cmbStates.Text = "PA"
 
 
-        txtCity.Text = "Philadelphia"
+        txtc.Text = "Philadelphia"
 
 
 

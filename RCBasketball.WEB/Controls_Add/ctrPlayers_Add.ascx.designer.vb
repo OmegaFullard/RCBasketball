@@ -41,49 +41,49 @@ Partial Public Class ctrPlayers_Add
     Protected WithEvents Table1 As Global.System.Web.UI.WebControls.Table
 
     '''<summary>
-    '''txtPlayerID control.
+    '''txtID control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtPlayerID As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtID As Global.Telerik.Web.UI.RadTextBox
 
     '''<summary>
-    '''txtFirstN control.
+    '''txtFN control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtFirstN As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtFN As Global.Telerik.Web.UI.RadTextBox
 
     '''<summary>
-    '''txtLastN control.
+    '''txtLN control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtLastN As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtLN As Global.Telerik.Web.UI.RadTextBox
 
     '''<summary>
-    '''txtAddress control.
+    '''txtAdd control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtAddress As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtAdd As Global.Telerik.Web.UI.RadTextBox
 
     '''<summary>
-    '''txtCity control.
+    '''txtc control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtCity As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtc As Global.Telerik.Web.UI.RadTextBox
 
     '''<summary>
     '''valRequiredFieldCity control.
@@ -113,13 +113,13 @@ Partial Public Class ctrPlayers_Add
     Protected WithEvents cmbStates As Global.Telerik.Web.UI.RadMultiColumnComboBox
 
     '''<summary>
-    '''txtZip control.
+    '''txtZ control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtZip As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtZ As Global.Telerik.Web.UI.RadTextBox
 
     '''<summary>
     '''valRequiredFieldZip control.
@@ -140,13 +140,13 @@ Partial Public Class ctrPlayers_Add
     Protected WithEvents Require_Zip As Global.AjaxControlToolkit.ValidatorCalloutExtender
 
     '''<summary>
-    '''txtPhone control.
+    '''txtPh control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtPhone As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtPh As Global.Telerik.Web.UI.RadTextBox
 
     '''<summary>
     '''valRequiredFieldPhone control.
@@ -167,13 +167,13 @@ Partial Public Class ctrPlayers_Add
     Protected WithEvents Require_Phone As Global.AjaxControlToolkit.ValidatorCalloutExtender
 
     '''<summary>
-    '''txtEmail control.
+    '''txtE control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtEmail As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtE As Global.Telerik.Web.UI.RadTextBox
 
     '''<summary>
     '''valRegularExprEmailAddr control.

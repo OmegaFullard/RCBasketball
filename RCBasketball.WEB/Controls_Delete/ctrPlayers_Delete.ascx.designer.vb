@@ -23,6 +23,15 @@ Partial Public Class ctrPlayers_Delete
     Protected WithEvents lblResult As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''lblPlayerID control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblPlayerID As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Table1 control.
     '''</summary>
     '''<remarks>
@@ -32,76 +41,112 @@ Partial Public Class ctrPlayers_Delete
     Protected WithEvents Table1 As Global.System.Web.UI.WebControls.Table
 
     '''<summary>
-    '''txtPlayerID control.
+    '''txtID control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtPlayerID As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtID As Global.Telerik.Web.UI.RadTextBox
 
     '''<summary>
-    '''txtFirstN control.
+    '''txtFN control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtFirstN As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtFN As Global.Telerik.Web.UI.RadTextBox
 
     '''<summary>
-    '''txtLastN control.
+    '''txtLN control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtLastN As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtLN As Global.Telerik.Web.UI.RadTextBox
 
     '''<summary>
-    '''txtAddress control.
+    '''txtAdd control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtAddress As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtAdd As Global.Telerik.Web.UI.RadTextBox
 
     '''<summary>
-    '''txtCity control.
+    '''txtc control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtCity As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtc As Global.Telerik.Web.UI.RadTextBox
 
     '''<summary>
-    '''txtState control.
+    '''valRequiredFieldCity control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtState As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents valRequiredFieldCity As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
-    '''txtZip control.
+    '''Requere_City control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtZip As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Requere_City As Global.AjaxControlToolkit.ValidatorCalloutExtender
 
     '''<summary>
-    '''txtPhone control.
+    '''cmbStates control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtPhone As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents cmbStates As Global.Telerik.Web.UI.RadMultiColumnComboBox
+
+    '''<summary>
+    '''txtZ control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtZ As Global.Telerik.Web.UI.RadNumericTextBox
+
+    '''<summary>
+    '''valRequiredFieldZip control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents valRequiredFieldZip As Global.System.Web.UI.WebControls.RequiredFieldValidator
+
+    '''<summary>
+    '''Require_Zip control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Require_Zip As Global.AjaxControlToolkit.ValidatorCalloutExtender
+
+    '''<summary>
+    '''txtPh control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtPh As Global.Telerik.Web.UI.RadMaskedTextBox
 
     '''<summary>
     '''valRequiredFieldPhone control.
@@ -122,13 +167,31 @@ Partial Public Class ctrPlayers_Delete
     Protected WithEvents Require_Phone As Global.AjaxControlToolkit.ValidatorCalloutExtender
 
     '''<summary>
-    '''txtEmail control.
+    '''txtE control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtEmail As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtE As Global.Telerik.Web.UI.RadTextBox
+
+    '''<summary>
+    '''valRegularExprEmailAddr control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents valRegularExprEmailAddr As Global.System.Web.UI.WebControls.RegularExpressionValidator
+
+    '''<summary>
+    '''CalloutEmailAddress control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents CalloutEmailAddress As Global.AjaxControlToolkit.ValidatorCalloutExtender
 
     '''<summary>
     '''btnCancel control.
