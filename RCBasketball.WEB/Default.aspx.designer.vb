@@ -14,38 +14,11 @@ Option Explicit On
 Partial Public Class _Default
 
     '''<summary>
-    '''ScriptManager1 control.
+    '''NavigationMenu control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents ScriptManager1 As Global.System.Web.UI.ScriptManager
-
-    '''<summary>
-    '''Panel1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Panel1 As Global.System.Web.UI.WebControls.Panel
-
-    '''<summary>
-    '''rcbball control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents rcbball As Global.System.Web.UI.WebControls.Image
-
-    '''<summary>
-    '''rcballer control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents rcballer As Global.System.Web.UI.WebControls.Image
+    Protected WithEvents NavigationMenu As Global.System.Web.UI.WebControls.Menu
 End Class

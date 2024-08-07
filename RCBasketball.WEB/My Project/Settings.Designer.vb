@@ -153,6 +153,15 @@ Namespace My
                 Return CType(Me("SmtpServerID"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=OIT-L-BY10S73\SQLEXPRESS;Initial Catalog=RCBasketball;")>  _
+        Public ReadOnly Property RCBasketballConnectionString() As String
+            Get
+                Return CType(Me("RCBasketballConnectionString"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 

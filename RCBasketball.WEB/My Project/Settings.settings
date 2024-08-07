@@ -39,5 +39,8 @@
     <Setting Name="SmtpServerID" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="RCBasketballConnectionString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Data Source=OIT-L-BY10S73\SQLEXPRESS;Initial Catalog=RCBasketball;</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
