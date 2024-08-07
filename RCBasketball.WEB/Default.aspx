@@ -5,7 +5,7 @@
 
     <head>
     <meta charset="utf-8">
-    <title>Welcome to Royal City Basketball!</title>
+    <title>Royal City Basketball</title>
         
     <meta name="author" content="Omega Fullard">
     <meta name="description" content="Royal City Basketball League">
@@ -13,6 +13,10 @@
         <link rel="icon" href="Images/favicon/favicon.ico" type="image/x-icon"/>      
         <link href="Styles/Site.css" rel="stylesheet" />
         <link href="App_Themes/MasterSite/Page.css" rel="stylesheet" />
+            <!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+
 </head>
     
 <body>
@@ -92,24 +96,39 @@
 				</p>
 				<br/>
 				<br/>
-<center><h4 class="card-title">Join Our Basketball League</h4></center>
-<center></center>
-                 <center>  <p><strong>Please be sure to follow us on Social Media!, links to social media websites</strong></p>
-        <a href="#" class="btn btn-primary">Follow Us!</a>  
-              
-                <p>Download our full fees <a href="downloads/FakeFeesList.zip">Registration Fees</a></p>
+<h4 class="card-title">Join Our Basketball League</h4>
+                
+
+                <p>Download our full leagues list:  <a href="downloads/FakeFeesList.zip">Spring/Summer/Fall Leagues</a></p>
             </article>
-<Center><H4>Tournaments</H4>
-                <img src="images/dunk1.png" style="width:250px;height:250px;" alt="man dunking" /></Center>
-           
+
+<H4>Tournaments</H4>
+                <img src="images/dunk1.png" style="width:250px;height:250px;" alt="man dunking" />
+           <p>Download our full fees list:  <a href="downloads/FakeFeesList.zip">Registration Fees</a></p>
 			<br />
-			<p>Sign up for volunteering at local events.</p>
-  <a href="#" class="btn btn-primary">Events</a>
+			<p>Sign up for volunteering at local <a href="#" class="btn btn-primary">Events</a></p>
+            <br />
+             <center>  <p><strong>Please be sure to follow us on Social Media!</strong></p>
+            <br /> 
+            <div style="height: 66px">
+
+            <!-- Add font awesome icons -->
+<a href="#" class="fa fa-facebook"></a>
+<a href="#" class="fa fa-twitter"></a>
+<a href="#" class="fa fa-linkedin"></a>
+<a href="#" class="fa fa-youtube"></a>
+<a href="#" class="fa fa-instagram"></a>
+
+        </div>
+<br />
+        <a href="#" class="btn btn-primary">Follow Us!</a>  
 
     <h4 class="card-title"><strong>Directions to Our Main Location</strong></h4>                       
-    <a href="#" class="btn btn-primary">Directions</a>
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d12234.543958929013!2d-75.16621169999999!3d39.94953124999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s39.57.09%2C75.10.14.8!5e0!3m2!1sen!2sus!4v1723056453703!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+     <br />
+            <a href="#" class="btn btn-primary">Directions</a>
             <a href="https://google.com/maps?q=39.57.09,75.10.14.8"></a>
- 
         </main>
 
         
