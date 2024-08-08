@@ -29,6 +29,7 @@
                     ctrSearch_Players.PopulateSearchControl()
                     If ctrSearch_Players.PlayerID = 0 Then Exit Sub
                     Me.ctrPlayers_Add.ClearControls() : Me.ctrPlayers_Add.PlayerID = ctrSearch_Players.PlayerID
+                    ' Me.ctrPlayers_Add.ClearControls() : Me.ctrPlayers_Add.PlayersList = ctrSearch_Players.PlayerID
 
                 ElseIf Request.Form("ctl00$MainContent$ctrPlayers_Add$btnCreate") = "Add" Then
                     Me.ctrPlayers_Add.AddPlayers()

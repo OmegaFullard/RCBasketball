@@ -17,9 +17,7 @@
                     width="1200px" AllowPaging="True" AllowSorting="True" PageSize="15">
                     <PagerSettings Mode="NumericFirstLast"    Position="Bottom" />
                           <Columns>
-                                     
-                                     <asp:BoundField DataField="PlayerID" HeaderText="Player ID" HtmlEncode="False"  ItemStyle-Width="100"
-                                       ReadOnly="True"  Visible="True" />
+                                   
                                      <asp:BoundField DataField="FirstN" HeaderText="First Name" HtmlEncode="False"  ItemStyle-Width="100"
                                        ReadOnly="True"  Visible="True" />
 									       <asp:BoundField DataField="LastN" HeaderText="Last Name" HtmlEncode="False"  ItemStyle-Width="100"

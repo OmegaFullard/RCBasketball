@@ -18,12 +18,13 @@ Public Class ctrSearch_Players_Update
         End Set
     End Property
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Dim thePlayers As New clsRCBasketball
+        Dim thePlayers As clsRCBasketball = New clsRCBasketball()
 
         If Not (Page.IsPostBack) Then
 
-            cmbPlayer.DataSource = thePlayers.GetPlayersList
-            cmbPlayer.DataTextField = "PlayerID" : cmbPlayer.DataValueField = "FirstN"
+            cmbPlayer.DataSource = thePlayers.GetPlayer()
+            cmbPlayer.DataTextField = "PlayerID"
+            cmbPlayer.DataValueField = "FirstN"
             cmbPlayer.DataBind()
 
         End If
@@ -36,9 +37,9 @@ Public Class ctrSearch_Players_Update
 
     End Sub
 
-    'Public Sub PopulateSearchControl()
+    Public Sub PopulateSearchControl()
 
-    '    m_PlayerID = cmbPlayer.Text
+        m_PlayerID = cmbPlayer.Text
 
-    'End Sub
+    End Sub
 End Class

@@ -7,6 +7,8 @@ Public Class Players_Update
 
     Private m_PlayerID As String = String.Empty
 
+    Private m_FirstN As String = String.Empty
+
     Public Property PlayerID() As String
         Get
             Return m_PlayerID
@@ -15,20 +17,29 @@ Public Class Players_Update
             m_PlayerID = value
         End Set
     End Property
+
+
+    Public Property FirstN() As String
+        Get
+            Return m_FirstN
+        End Get
+        Set(ByVal value As String)
+            m_FirstN = value
+        End Set
+    End Property
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Try
 
-
             If (Page.IsPostBack) Then
+                Dim strPlayer As String = Request.Form("ctl00_MainContent_ctrSearchPlayers_Update_cmbPlayers_ClientState") _
+                .Replace(Chr(34), "").Replace("{", "").Replace("}", "").Replace(",", "").Replace("text", "").Replace("value", "").Replace("%20", " ").Replace("%26", "&")
+                If m_PlayerID.Length > 4 Then
+                    Dim arrPlayers() As String = strPlayer.Split(":")
+                    Me.ctrPlayers_Update.PlayerID = Integer.Parse(arrPlayers(1)) : Me.ctrPlayers_Update.FirstN = (arrPlayers(2))
 
 
-                Dim m_PlayerID As String = (Request.Form("ctl00_MainContent_ctrSearch_Players_Update_cmbPlayer_ClientState").Replace("""", "").Replace("{", "").Replace("}", "").Replace(",", "").Replace("text", "").Replace("value", "").Replace("%20", " ").Replace("%26", "&"))
-                If m_PlayerID.Length > 0 Then
-                    Dim arrPlayers As String() = m_PlayerID.Split(Convert.ToChar(":"))
-                    Me.ctrPlayers_Update.PlayerID = Integer.Parse(arrPlayers(1))
                     Me.ctrSearch_Players_Update.ClearControl()
                 End If
-
 
 
             End If

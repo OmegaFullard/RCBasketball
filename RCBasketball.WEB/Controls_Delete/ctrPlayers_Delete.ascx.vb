@@ -9,12 +9,23 @@ Public Class ctrPlayers_Delete
 
 
     Private m_PlayerID As String = String.Empty
+    Private m_FirstN As String = String.Empty
     Public Property PlayerID() As String
         Get
             Return m_PlayerID
         End Get
         Set(ByVal value As String)
             m_PlayerID = value
+        End Set
+    End Property
+
+
+    Public Property FirstN() As String
+        Get
+            Return m_FirstN
+        End Get
+        Set(ByVal value As String)
+            m_FirstN = value
         End Set
     End Property
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load

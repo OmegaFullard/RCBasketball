@@ -66,8 +66,8 @@ Public Class ctrPlayers_Add
 
             Try
                 Dim theRCBasketball As New clsRCBasketball
-                'theRCBasketball.AddPlayer(thisPlayers)
-                theRCBasketball.GetPlayersByID(Convert.ToInt32(thisPlayers))
+                theRCBasketball.AddPlayer(thisPlayers)
+                'theRCBasketball.GetPlayersByID(Convert.ToInt32(thisPlayers))
                 lblResult.Text = "Player data has been added"
             Catch ex As SqlException
 

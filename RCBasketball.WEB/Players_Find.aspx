@@ -2,7 +2,7 @@
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 <%@ Register Src="~/Controls_Search/ctrSearch_Players.ascx" TagPrefix="uc1" TagName="ctrSearch_Players" %>
 <%@ Register Src="~/Controls_Find/ctrPlayers_Find.ascx" TagPrefix="uc1" TagName="ctrPlayers_Find" %>
-<%@ Register Src="~/ctrPlayers.ascx" TagPrefix="uc1" TagName="ctrPlayers" %>
+
 
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="head">

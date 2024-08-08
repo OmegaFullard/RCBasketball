@@ -2,6 +2,8 @@
 Imports RCBasketball.DAL
 Imports System.Linq
 Imports System.Web
+Imports RCBasketball.DAL.RCBasketball
+
 Public Class ctrPlayers_Update
     Inherits System.Web.UI.UserControl
 
@@ -36,8 +38,8 @@ Public Class ctrPlayers_Update
         End Set
     End Property
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Dim thePlayers As New clsRCBasketball
-        Dim tblPlayers As DAL.RCBasketball.PlayersDataTable
+        Dim thePlayers As clsRCBasketball = New clsRCBasketball()
+        Dim tblPlayers As PlayersDataTable = New PlayersDataTable()
 
         Try
 
@@ -45,39 +47,41 @@ Public Class ctrPlayers_Update
 
 
                 If Request.Form("ctl00$MainContent$ctrPlayers_Update$btnUpdate") = "Update" Then
-                    If Me.lblPlayerID.Text.Length < 2 Then Me.lblResult.Text = "Player ID is Messing!" : Exit Sub
+
                     UpdatePlayer()
 
                 Else
-                    If m_PlayerID.Length = 0 Then Exit Sub
+                    If m_PlayerID.Length > 0 Then
+                        lblResult.Text = "ID" + m_PlayerID
+                        If (lblResult.Text.Length = 0) Then Return
+                        If True Then
 
-                    tblPlayers = thePlayers.GetPlayersByID(m_PlayerID)
-
-                    If tblPlayers.Count = 0 Then Exit Sub
-
-                    With tblPlayers(0)
+                            With tblPlayers(0)
 
 
-                        cmbStates.Value = .State
-                        Me.txtFirstN.Text = .FirstN : Me.txtLastN.Text = .LastN : Me.txtPlayerID.Text = .PlayerID : If Not .IsAddressNull Then txtAddress.Text = .Address.Trim
+                                cmbStates.Value = .State
+                                Me.txtFirstN.Text = .FirstN : Me.txtLastN.Text = .LastN : Me.txtPlayerID.Text = .PlayerID : If Not .IsAddressNull Then txtAddress.Text = .Address.Trim
 
-                        If Not .IsCityNull Then Me.txtCity.Text = .City.Trim
-                        If Not .IsZipNull Then
-                            If .Zip.Trim.Length > 5 Then txtZip.Text = .Zip.Trim.Substring(0, 5) Else txtZip.Text = .Zip.Trim
+                                If Not .IsCityNull Then Me.txtCity.Text = .City.Trim
+                                If Not .IsZipNull Then
+                                    If .Zip.Trim.Length > 5 Then txtZip.Text = .Zip.Trim.Substring(0, 5) Else txtZip.Text = .Zip.Trim
+                                End If
+
+                                If Not .IsPhoneNull Then txtPhone.Text = .Phone
+                                If Not .IsEmailNull Then txtEmail.Text = .Email
+
+                            End With
+
+
+                            Me.btnUpdate.Enabled = True
+
                         End If
 
-                        If Not .IsPhoneNull Then txtPhone.Text = .Phone
-                        If Not .IsEmailNull Then txtEmail.Text = .Email
-
-                    End With
-
-                    Me.btnUpdate.Enabled = True
-
-                End If
                     Else
-                PopulateControls()
+                        PopulateControls()
+                    End If
+                End If
             End If
-
         Catch ex As Exception
             Dim SendError As New clsRCBasketball_Web
             Dim NotificationBody As String = ex.Message & "  " & ex.StackTrace

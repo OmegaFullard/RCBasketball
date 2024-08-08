@@ -2,6 +2,8 @@
 Imports RCBasketball.DAL
 Imports System.Linq
 Imports System.Web
+Imports RCBasketball.DAL.RCBasketball
+
 Public Class ctrPlayers
     Inherits System.Web.UI.UserControl
 
@@ -17,7 +19,7 @@ Public Class ctrPlayers
     End Property
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Dim thePlayers As clsRCBasketball = New clsRCBasketball()
-        Dim tblPlayers As New DAL.RCBasketball.PlayersDataTable
+        Dim tblPlayers As New PlayersDataTable
 
         Try
 

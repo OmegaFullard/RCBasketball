@@ -18,31 +18,29 @@ Public Class ctrPlayers_Find
             m_PlayerID = value
         End Set
     End Property
-    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load, grdPlayers.Load
 
         Dim thePlayers As clsRCBasketball = New clsRCBasketball()
-        Dim tblPlayers As New DAL.RCBasketball.PlayersDataTable
+        Dim tblPlayers As PlayersDataTable = New PlayersDataTable()
 
         Try
-
-            If Request.Form("ctl00$MainContent$ctrSearch_Players$btnSearch") = "Search" Then
-                Me.ctrHiddebField.Value = Convert.ToString(m_PlayerID)
-            End If
+            If Request.Form("ctl00$MainContent$ctrSearch_Players$btnSearch") = "Search" Then Me.lblSearchResult.Text = "ID" & m_PlayerID
 
             If (Page.IsPostBack) And Me.lblSearchResult.Text.Length > 0 Then
-                tblPlayers = thePlayers.GetPlayersByID(m_PlayerID)
+                tblPlayers = CType(thePlayers.GetPlayersByID(Integer.Parse(Me.lblSearchResult.Text.Replace("ID", ""))), PlayersDataTable)
             Else
-                tblPlayers = thePlayers.GetPlayer()
+                tblPlayers = CType(thePlayers.GetPlayer(), PlayersDataTable)
             End If
 
-
-            Me.lblSearchResult.Text = tblPlayers.Rows.Count.ToString + " Result(s)"
+            Me.lblSearchResult.Text = tblPlayers.Rows.Count.ToString()
             Me.grdPlayers.DataSource = tblPlayers.DefaultView
             Me.grdPlayers.DataBind()
-
         Catch ex As Exception
-                Throw
-            End Try
+            Dim SendError As clsRCBasketball_Web = New clsRCBasketball_Web()
+            Dim NotificationBody As String = ex.Message & "  " + ex.StackTrace
+            SendError.SendMailMessage(NotificationBody)
+            Response.Redirect("ErrorPage.aspx", False)
+        End Try
 
     End Sub
 
