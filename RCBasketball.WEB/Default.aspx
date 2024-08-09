@@ -69,7 +69,7 @@
                     <center><h2><b>Welcome to Royal City Basketball</b></h2></center>
                 </header>
                
-                <h4><b>Our history</b></h4>
+                <h4><b>Our History</b></h4>
                 <p><b>Formation and Early Years:</b> <br />The Royal City Basketball League was established in 2023 to provide a structured environment for basketball enthusiasts of all ages and skill levels. 
 				The league was founded with the vision of promoting the sport within the community and fostering a sense of camaraderie among players.
                     <br></p>

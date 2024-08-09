@@ -1,7 +1,6 @@
 ﻿Public Class clsPlayers
     Dim m_FirstN As String, m_LastN As String, m_Address As String, m_City As String, m_State As String, m_Zip As String, m_Phone As String, m_Email As String
     Dim m_origPlayerID As Integer = 0
-
     Dim m_PlayerID As Integer = 0
 
     Public Property PlayerID As Integer
