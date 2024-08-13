@@ -380,6 +380,17 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="RCBasketball_Reports.xsc">
+      <DependentUpon>RCBasketball_Reports.xsd</DependentUpon>
+    </Content>
+    <None Include="RCBasketball_Reports.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RCBasketball_Reports.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="RCBasketball_Reports.xss">
+      <DependentUpon>RCBasketball_Reports.xsd</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -416,6 +427,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RCBasketball.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RCBasketball_Reports.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RCBasketball_Reports.xsd</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

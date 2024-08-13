@@ -119,6 +119,21 @@ Public Class clsRCBasketball
             Throw
         End Try
     End Function
+
+    Public Function GetPlayerID() As Integer
+
+        Dim adpGetPlayerID As New GetPlayerIDTableAdapter
+        Try
+            Dim tblGetPlayerID As GetPlayerIDDataTable = adpGetPlayerID.GetData
+            Dim row As GetPlayerIDRow = tblGetPlayerID(0)
+
+            Return row.PlayerID
+
+        Catch ex As Exception
+
+        End Try
+
+    End Function
     Public Sub UpdatePlayer(ByVal thisPlayer As clsPlayers)
 
 
@@ -129,7 +144,7 @@ Public Class clsRCBasketball
 
             With thisPlayer
 
-                adpPlayer.Update(.FirstN, .LastN, .Address, .City, .State, .Zip, .Phone, .Email, .origPlayerID)
+                adpPlayer.UpdateQuery(.FirstN, .LastN, .Address, .City, .State, .Zip, .Phone, .Email, .origPlayerID)
             End With
 
 
@@ -142,21 +157,21 @@ Public Class clsRCBasketball
     End Sub
 
     Public Function AddPlayer(ByVal thisPlayer As clsPlayers) As Integer
-        Dim adpPlayer As PlayersTableAdapter = New PlayersTableAdapter()
-        Dim adpGetPlayerID As GetPlayerIDTableAdapter = New GetPlayerIDTableAdapter()
 
-        Dim tblPlayer As PlayersDataTable = New PlayersDataTable()
-        PlayerID = False
+        Dim adpPlayer As New PlayersTableAdapter
+        Dim adpGetPlayerID As New GetPlayerIDTableAdapter
+
+        'Dim tblPlayer As PlayersDataTable = New PlayersDataTable()
+        'PlayerID = False
 
         Try
 
-            If True Then
-                Dim withBlock = thisPlayer
-                adpPlayer.Insert(withBlock.FirstN, withBlock.LastN, withBlock.Address, withBlock.City, withBlock.State, withBlock.Zip, withBlock.Phone, withBlock.Email)
-            End If
+            With thisPlayer
+                adpPlayer.InsertQuery(.FirstN, .LastN, .Address, .City, .State, .Zip, .Phone, .Email)
+            End With
 
-            Dim tblAddPlayer As PlayersDataTable = adpPlayer.GetData()
-            Dim row As PlayersRow = tblAddPlayer(0)
+            Dim tblGetPlayerID As GetPlayerIDDataTable = adpGetPlayerID.GetData
+            Dim row As GetPlayerIDRow = tblGetPlayerID(0)
             Return row.PlayerID
 
         Catch ex As Exception

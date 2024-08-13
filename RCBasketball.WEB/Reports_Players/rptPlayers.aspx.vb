@@ -3,7 +3,7 @@ Imports RCBasketball.DAL
 Imports System.Linq
 Imports System.Web
 Imports Microsoft.Reporting.WebForms
-Imports RCBasketball.DAL.RCBasketball
+Imports RCBasketball.DAL.RCBasketball_Reports
 
 Public Class rptPlayers
     Inherits System.Web.UI.Page
@@ -21,11 +21,11 @@ Public Class rptPlayers
             m_PlayerID = value
         End Set
     End Property
-    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load, ReportViewer1.Load
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If (Page.IsPostBack) Then
             If Request.Form("ctl00$MainContent$ctrSearch_Players$btnSearch") = "Search" Then
                 ctrSearch_Players.PopulateSearchControl()
-                theSearch.ReportPath = "Reports_Players\rptPlayers.rdlc"
+                theSearch.ReportPath = "~/Reports_Players/rptPlayers.rdlc"
                 theSearch.PlayerID = ctrSearch_Players.PlayerID
                 PlayerReport()
             End If
@@ -34,45 +34,44 @@ Public Class rptPlayers
 
     Private Sub PlayerReport()
 
-
         Try
-            Dim dt As New DataTable("PlayersDataTable")
-            Dim thePlayers As clsRCBasketball = New clsRCBasketball()
 
-            Dim ReportDataSource As ReportDataSource = New ReportDataSource("DataSet1", dt)
+            Dim thePlayer As New clsRCBasketball_Reports
+
+            Dim ReportDataSource As ReportDataSource = New ReportDataSource()
             Dim strTitle As String = String.Empty
             Dim dtReport As PlayersDataTable
 
             ReportDataSource.Name = "DataSet1"
+
             ReportViewer1.ProcessingMode = ProcessingMode.Local
             ReportViewer1.LocalReport.ReportPath = Server.MapPath(theSearch.ReportPath)
+            If theSearch.PlayerID.Trim.Length = 0 Then theSearch.PlayerID = 0
+            If IsNumeric(theSearch.PlayerID) Then Int32.Parse(theSearch.PlayerID)
 
-            If theSearch.PlayerID.ToString().Length = 0 Then
-                theSearch.PlayerID = Integer.Parse("xxxxxx")
-                If IsNumeric(theSearch.PlayerID) Then Int32.Parse(theSearch.PlayerID)
 
-                Dim numPlayerID As Integer = Int32.Parse(theSearch.PlayerID)
-                dtReport = CType(thePlayers.GetPlayersByID(theSearch.PlayerID), PlayersDataTable)
 
-                strTitle = "Royal City Basketball: " & " Players Report"
-                ReportDataSource.Value = dtReport
-                Dim param1 As New ReportParameter("Title", strTitle)
+            Dim numPlayerID As Integer = Int32.Parse(theSearch.PlayerID)
+            dtReport = thePlayer.GetPlayerByPlayerID(numPlayerID)
 
-                ReportViewer1.LocalReport.SetParameters(New ReportParameter() {param1})
+            ReportDataSource.Value = dtReport
 
-                ReportViewer1.LocalReport.DataSources.Clear()
-                ReportViewer1.LocalReport.DataSources.Add(ReportDataSource)
-                ReportViewer1.LocalReport.Refresh()
 
-            End If
+            ReportViewer1.LocalReport.DataSources.Clear()
+            ReportViewer1.LocalReport.DataSources.Add(ReportDataSource)
+
+            ReportViewer1.LocalReport.Refresh()
+
+
 
         Catch ex As Exception
             Throw
         End Try
 
+
     End Sub
 
-    Protected Sub ReportViewer1_Load(sender As Object, e As EventArgs) 
+    Protected Sub ReportViewer1_Load(sender As Object, e As EventArgs)
         'string exportOption = "Excel";
         'string exportOption = "Word";
         Dim exportOption As String = "PDF"
