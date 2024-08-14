@@ -10,7 +10,7 @@
                              <asp:TableRow >
                                          <asp:TableCell>Player ID<span class="required">*</span>:</asp:TableCell>
                                           <asp:TableCell > 
-                                                  <telerik:RadTextBox ID="txtID" runat="server" Width="200px" Height="25px" Enabled="True"></telerik:RadTextBox>
+                                                  <telerik:RadTextBox ID="txtID" runat="server" Width="200px" Height="25px" Enabled="False"></telerik:RadTextBox>
                                           </asp:TableCell>
                                    <asp:TableCell>&nbsp;&nbsp;</asp:TableCell> <asp:TableCell>&nbsp;&nbsp;</asp:TableCell> 
                                     <asp:TableCell>&nbsp;&nbsp;</asp:TableCell> <asp:TableCell>&nbsp;&nbsp;</asp:TableCell>

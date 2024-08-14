@@ -3,26 +3,26 @@
  <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 
 <script>
-     function OnClientLoad0(sender, args) {
+    function OnClientLoad0(sender, args) {
 
-         $telerik.$(".k-input")[0].setAttribute("readonly", "true");
-     }
-     function OnClientLoad1(sender, args) {
+        $telerik.$(".k-input")[0].setAttribute("readonly", "true");
+    }
+    function OnClientLoad1(sender, args) {
 
-         $telerik.$(".k-input")[1].setAttribute("readonly", "true");
-     }
-     function OnClientLoad2(sender, args) {
+        $telerik.$(".k-input")[1].setAttribute("readonly", "true");
+    }
+    function OnClientLoad2(sender, args) {
 
-         $telerik.$(".k-input")[2].setAttribute("readonly", "true");
-     }
-     function OnClientLoad3(sender, args) {
+        $telerik.$(".k-input")[2].setAttribute("readonly", "true");
+    }
+    function OnClientLoad3(sender, args) {
 
-         $telerik.$(".k-input")[3].setAttribute("readonly", "true");
-     }
-     function OnClientLoad4(sender, args) {
+        $telerik.$(".k-input")[3].setAttribute("readonly", "true");
+    }
+    function OnClientLoad4(sender, args) {
 
-         $telerik.$(".k-input")[4].setAttribute("readonly", "true");
-     }
+        $telerik.$(".k-input")[4].setAttribute("readonly", "true");
+    }
 
 </script>
 

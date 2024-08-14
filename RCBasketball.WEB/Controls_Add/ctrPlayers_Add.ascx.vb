@@ -27,7 +27,22 @@ Public Class ctrPlayers_Add
     End Property
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
-        PopulateControls()
+        Dim thePlayers As New clsRCBasketball
+        Dim tblPlayers As New PlayersDataTable
+
+        Try
+            If (Page.IsPostBack) Then
+                If Request.Form("ct100$MainContent$ctrPlayers_Add$btnAdd") = "Add" Then
+                    AddPlayers()
+                End If
+
+            Else
+                PopulateControls()
+            End If
+        Catch ex As Exception
+
+        End Try
+
 
     End Sub
 

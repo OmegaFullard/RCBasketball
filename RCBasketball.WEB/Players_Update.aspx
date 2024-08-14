@@ -11,7 +11,7 @@
 
      
 
-                 <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+               
               <div aria-dropeffect="move" style="padding-left:5px; padding-right:10px; height:500px;overflow: auto; background:#e6ecff">    
                        <div class="HeadingB" >Update Players</div>
                  
