@@ -120,20 +120,20 @@ Public Class clsRCBasketball
         End Try
     End Function
 
-    Public Function GetPlayerID() As Integer
+    'Public Function GetPlayerID() As Integer
 
-        Dim adpGetPlayerID As New GetPlayerIDTableAdapter
-        Try
-            Dim tblGetPlayerID As GetPlayerIDDataTable = adpGetPlayerID.GetData
-            Dim row As GetPlayerIDRow = tblGetPlayerID(0)
+    '    Dim adpGetPlayerID As New GetPlayerIDTableAdapter
+    '    Try
+    '        Dim tblGetPlayerID As GetPlayerIDDataTable = adpGetPlayerID.GetData
+    '        Dim row As GetPlayerIDRow = tblGetPlayerID(0)
 
-            Return row.PlayerID
+    '        Return row.PlayerID
 
-        Catch ex As Exception
+    '    Catch ex As Exception
 
-        End Try
+    '    End Try
 
-    End Function
+    'End Function
     Public Sub UpdatePlayer(ByVal thisPlayer As clsPlayers)
 
 

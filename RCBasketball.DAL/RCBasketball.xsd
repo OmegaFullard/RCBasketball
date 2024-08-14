@@ -71,7 +71,7 @@ FROM   Players</CommandText>
               <Mapping SourceColumn="Email" DataSetColumn="Email" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="RCBasketballConnectionString.DAL.My.MySettings.RCBasketball (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="DeleteQuery">
+              <DbSource ConnectionRef="RCBasketballConnectionString.DAL.My.MySettings.RCBasketball (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM [Players] WHERE (([PlayerID] = @Original_PlayerID))</CommandText>
@@ -102,7 +102,7 @@ FROM   Players</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="RCBasketballConnectionString.DAL.My.MySettings.RCBasketball (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertQuery">
+              <DbSource ConnectionRef="RCBasketballConnectionString.DAL.My.MySettings.RCBasketball (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO [Players] ([FirstN], [LastN], [Address], [City], [State], [Zip], [Phone], [Email]) VALUES (@FirstN, @LastN, @Address, @City, @State, @Zip, @Phone, @Email)</CommandText>
@@ -119,7 +119,7 @@ FROM   Players</CommandText>
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="RCBasketballConnectionString.DAL.My.MySettings.RCBasketball (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="UpdateQuery">
+              <DbSource ConnectionRef="RCBasketballConnectionString.DAL.My.MySettings.RCBasketball (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateQuery">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE [Players] SET [FirstN] = @FirstN, [LastN] = @LastN, [Address] = @Address, [City] = @City, [State] = @State, [Zip] = @Zip, [Phone] = @Phone, [Email] = @Email WHERE (([PlayerID] = @Original_PlayerID))</CommandText>
@@ -286,7 +286,7 @@ FROM   Players</CommandText>
   <xs:element name="RCBasketball" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="RCBasketball" msprop:Generator_UserDSName="RCBasketball">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Players" msprop:Generator_TableClassName="PlayersDataTable" msprop:Generator_TableVarName="tablePlayers" msprop:Generator_TablePropName="Players" msprop:Generator_RowDeletingName="PlayersRowDeleting" msprop:Generator_RowChangingName="PlayersRowChanging" msprop:Generator_RowEvHandlerName="PlayersRowChangeEventHandler" msprop:Generator_RowDeletedName="PlayersRowDeleted" msprop:Generator_UserTableName="Players" msprop:Generator_RowChangedName="PlayersRowChanged" msprop:Generator_RowEvArgName="PlayersRowChangeEvent" msprop:Generator_RowClassName="PlayersRow">
+        <xs:element name="Players" msprop:Generator_TableClassName="PlayersDataTable" msprop:Generator_TableVarName="tablePlayers" msprop:Generator_RowChangedName="PlayersRowChanged" msprop:Generator_TablePropName="Players" msprop:Generator_RowDeletingName="PlayersRowDeleting" msprop:Generator_RowChangingName="PlayersRowChanging" msprop:Generator_RowEvHandlerName="PlayersRowChangeEventHandler" msprop:Generator_RowDeletedName="PlayersRowDeleted" msprop:Generator_RowClassName="PlayersRow" msprop:Generator_UserTableName="Players" msprop:Generator_RowEvArgName="PlayersRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PlayerID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnPlayerID" msprop:Generator_ColumnPropNameInRow="PlayerID" msprop:Generator_ColumnPropNameInTable="PlayerIDColumn" msprop:Generator_UserColumnName="PlayerID" type="xs:int" />
@@ -349,7 +349,7 @@ FROM   Players</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="rptPlayers" msprop:Generator_TableClassName="rptPlayersDataTable" msprop:Generator_TableVarName="tablerptPlayers" msprop:Generator_TablePropName="rptPlayers" msprop:Generator_RowDeletingName="rptPlayersRowDeleting" msprop:Generator_RowChangingName="rptPlayersRowChanging" msprop:Generator_RowEvHandlerName="rptPlayersRowChangeEventHandler" msprop:Generator_RowDeletedName="rptPlayersRowDeleted" msprop:Generator_UserTableName="rptPlayers" msprop:Generator_RowChangedName="rptPlayersRowChanged" msprop:Generator_RowEvArgName="rptPlayersRowChangeEvent" msprop:Generator_RowClassName="rptPlayersRow">
+        <xs:element name="rptPlayers" msprop:Generator_TableClassName="rptPlayersDataTable" msprop:Generator_TableVarName="tablerptPlayers" msprop:Generator_RowChangedName="rptPlayersRowChanged" msprop:Generator_TablePropName="rptPlayers" msprop:Generator_RowDeletingName="rptPlayersRowDeleting" msprop:Generator_RowChangingName="rptPlayersRowChanging" msprop:Generator_RowEvHandlerName="rptPlayersRowChangeEventHandler" msprop:Generator_RowDeletedName="rptPlayersRowDeleted" msprop:Generator_RowClassName="rptPlayersRow" msprop:Generator_UserTableName="rptPlayers" msprop:Generator_RowEvArgName="rptPlayersRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PlayerID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnPlayerID" msprop:Generator_ColumnPropNameInRow="PlayerID" msprop:Generator_ColumnPropNameInTable="PlayerIDColumn" msprop:Generator_UserColumnName="PlayerID" type="xs:int" />
@@ -412,7 +412,7 @@ FROM   Players</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PlayersList" msprop:Generator_TableClassName="PlayersListDataTable" msprop:Generator_TableVarName="tablePlayersList" msprop:Generator_RowChangedName="PlayersListRowChanged" msprop:Generator_TablePropName="PlayersList" msprop:Generator_RowDeletingName="PlayersListRowDeleting" msprop:Generator_RowChangingName="PlayersListRowChanging" msprop:Generator_RowEvHandlerName="PlayersListRowChangeEventHandler" msprop:Generator_RowDeletedName="PlayersListRowDeleted" msprop:Generator_RowClassName="PlayersListRow" msprop:Generator_UserTableName="PlayersList" msprop:Generator_RowEvArgName="PlayersListRowChangeEvent">
+        <xs:element name="PlayersList" msprop:Generator_TableClassName="PlayersListDataTable" msprop:Generator_TableVarName="tablePlayersList" msprop:Generator_TablePropName="PlayersList" msprop:Generator_RowDeletingName="PlayersListRowDeleting" msprop:Generator_RowChangingName="PlayersListRowChanging" msprop:Generator_RowEvHandlerName="PlayersListRowChangeEventHandler" msprop:Generator_RowDeletedName="PlayersListRowDeleted" msprop:Generator_UserTableName="PlayersList" msprop:Generator_RowChangedName="PlayersListRowChanged" msprop:Generator_RowEvArgName="PlayersListRowChangeEvent" msprop:Generator_RowClassName="PlayersListRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PlayerID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnPlayerID" msprop:Generator_ColumnPropNameInRow="PlayerID" msprop:Generator_ColumnPropNameInTable="PlayerIDColumn" msprop:Generator_UserColumnName="PlayerID" type="xs:int" />
@@ -440,7 +440,7 @@ FROM   Players</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="GetPlayerID" msprop:Generator_TableClassName="GetPlayerIDDataTable" msprop:Generator_TableVarName="tableGetPlayerID" msprop:Generator_TablePropName="GetPlayerID" msprop:Generator_RowDeletingName="GetPlayerIDRowDeleting" msprop:Generator_RowChangingName="GetPlayerIDRowChanging" msprop:Generator_RowEvHandlerName="GetPlayerIDRowChangeEventHandler" msprop:Generator_RowDeletedName="GetPlayerIDRowDeleted" msprop:Generator_UserTableName="GetPlayerID" msprop:Generator_RowChangedName="GetPlayerIDRowChanged" msprop:Generator_RowEvArgName="GetPlayerIDRowChangeEvent" msprop:Generator_RowClassName="GetPlayerIDRow">
+        <xs:element name="GetPlayerID" msprop:Generator_TableClassName="GetPlayerIDDataTable" msprop:Generator_TableVarName="tableGetPlayerID" msprop:Generator_RowChangedName="GetPlayerIDRowChanged" msprop:Generator_TablePropName="GetPlayerID" msprop:Generator_RowDeletingName="GetPlayerIDRowDeleting" msprop:Generator_RowChangingName="GetPlayerIDRowChanging" msprop:Generator_RowEvHandlerName="GetPlayerIDRowChangeEventHandler" msprop:Generator_RowDeletedName="GetPlayerIDRowDeleted" msprop:Generator_RowClassName="GetPlayerIDRow" msprop:Generator_UserTableName="GetPlayerID" msprop:Generator_RowEvArgName="GetPlayerIDRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PlayerID" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPlayerID" msprop:Generator_ColumnPropNameInRow="PlayerID" msprop:Generator_ColumnPropNameInTable="PlayerIDColumn" msprop:Generator_UserColumnName="PlayerID" type="xs:int" minOccurs="0" />

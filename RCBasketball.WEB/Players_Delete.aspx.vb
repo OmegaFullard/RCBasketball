@@ -2,6 +2,7 @@
     Inherits System.Web.UI.Page
     Private m_PlayerID As String = String.Empty
     Private m_FirstN As String = String.Empty
+    Dim m_origPlayerID As Integer = 0
 
     Public Property PlayerID() As String
         Get
@@ -29,7 +30,7 @@
 
             If (Page.IsPostBack) Then
                 Dim strPlayer As String = Request.Form("ctl00_MainContent_ctrSearchPlayers_Update_cmbPlayer_ClientState") _
-                .Replace(Chr(34), "").Replace("{", "").Replace("}", "").Replace(",", "").Replace("text", "").Replace("value", "").Replace("%20", " ").Replace("%26", "&")
+                .Replace(m_origPlayerID, m_PlayerID)
                 If m_PlayerID.Length > 4 Then
                     Dim arrPlayers() As String = strPlayer.Split(":")
                     Me.ctrPlayers_Delete.PlayerID = Integer.Parse(arrPlayers(1)) : Me.ctrPlayers_Delete.FirstN = (arrPlayers(2))

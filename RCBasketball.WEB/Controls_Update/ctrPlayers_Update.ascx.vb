@@ -38,50 +38,53 @@ Public Class ctrPlayers_Update
         End Set
     End Property
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Dim thePlayers As clsRCBasketball = New clsRCBasketball()
-        Dim tblPlayers As PlayersDataTable = New PlayersDataTable()
-
         Try
 
             If (Page.IsPostBack) Then
+                If m_PlayerID.Length > 0 Then Me.lblPlayerID.Text = "ID" + m_PlayerID
+                If Me.lblPlayerID.Text.Length = 2 Then Exit Sub
 
+                Me.lblResult.Text = String.Empty
 
                 If Request.Form("ctl00$MainContent$ctrPlayers_Update$btnUpdate") = "Update" Then
 
+                    If Me.lblPlayerID.Text.Length < 1 Then Me.lblResult.Text = "ID Missing!" : Exit Sub
+
                     UpdatePlayer()
 
-                Else
-                    If m_PlayerID.Length > 0 Then
-                        lblResult.Text = "ID" + m_PlayerID
-                        If (lblResult.Text.Length = 0) Then Return
-                        If True Then
+                ElseIf Request.Form("ctl00$MainContent$ctrSearch_Players$btnSearch") = "Search" Then
 
-                            With tblPlayers(0)
+                    Dim thePlayers As New clsRCBasketball
+                    Dim tblPlayers As PlayersDataTable = thePlayers.GetPlayersByID(CInt(Replace(Me.lblPlayerID.Text, "ID", "")))
+                    If tblPlayers.Count = 0 Then CleanControls() : Exit Sub
+                    Me.btnUpdate.Enabled = True
 
-
-                                cmbStates.Value = .State
-                                Me.txtFirstN.Text = .FirstN : Me.txtLastN.Text = .LastN : Me.txtPlayerID.Text = .PlayerID : If Not .IsAddressNull Then txtAddress.Text = .Address.Trim
-
-                                If Not .IsCityNull Then Me.txtCity.Text = .City.Trim
-                                If Not .IsZipNull Then
-                                    If .Zip.Trim.Length > 5 Then txtZip.Text = .Zip.Trim.Substring(0, 5) Else txtZip.Text = .Zip.Trim
-                                End If
-
-                                If Not .IsPhoneNull Then txtPhone.Text = .Phone
-                                If Not .IsEmailNull Then txtEmail.Text = .Email
-
-                            End With
+                    With tblPlayers(0)
 
 
-                            Me.btnUpdate.Enabled = True
 
+
+                        cmbStates.Value = .State
+                        If Not .IsFirstNNull Then txtFirstN.Text = .FirstN
+                        If Not .IsLastNNull Then txtLastN.Text = .LastN
+                        txtPlayerID.Text = .PlayerID
+                        If Not .IsAddressNull Then txtAddress.Text = .Address.Trim
+                        If Not .IsCityNull Then Me.txtCity.Text = .City.Trim
+                        If Not .IsZipNull Then
+                            If .Zip.Trim.Length > 5 Then txtZip.Text = .Zip.Trim.Substring(0, 5) Else txtZip.Text = .Zip.Trim
                         End If
 
-                    Else
-                        PopulateControls()
-                    End If
+                        If Not .IsPhoneNull Then txtPhone.Text = .Phone
+                                If Not .IsEmailNull Then txtEmail.Text = .Email
+                    End With
                 End If
-            End If
+
+
+
+            Else
+                    PopulateControls()
+                End If
+
         Catch ex As Exception
             Dim SendError As New clsRCBasketball_Web
             Dim NotificationBody As String = ex.Message & "  " & ex.StackTrace
@@ -94,25 +97,36 @@ Public Class ctrPlayers_Update
         Dim thePlayers As New clsRCBasketball
 
 
-        Me.cmbStates.DataSource = thePlayers.GetStatesList
-        Me.cmbStates.DataTextField = "State"
+        cmbStates.DataSource = thePlayers.GetStatesList
+        cmbStates.DataTextField = "State"
+        cmbStates.DataValueField = "State"
         Me.cmbStates.DataBind()
 
 
 
     End Sub
-    Private Sub UpdatePlayer()
-        Try
 
-            Dim thisPlayers As New clsPlayers
+
+    Private Sub UpdatePlayer()
+
+
+        Dim thisPlayers As New clsPlayers
+        Try
+            Select Case True
+
+                Case cmbStates.Value.Length = 0
+                    Me.lblResult.Text = "Please select State!" : Exit Sub
+            End Select
 
             With thisPlayers
-                If txtPlayerID.Text.Length = 0 Then Exit Sub
+                If cmbStates.Text = String.Empty Then Exit Sub
+
 
                 .origPlayerID = txtPlayerID.Text.Trim
                 .FirstN = txtFirstN.Text.Trim : .LastN = txtLastN.Text.Trim : .Address = txtAddress.Text.Trim
                 .City = txtCity.Text.Trim : .State = cmbStates.Text : .Zip = txtZip.Text : .Phone = txtPhone.Text.Trim : .Email = txtEmail.Text.Trim
-
+                .PlayerID = CInt(Replace(Me.lblPlayerID.Text, "ID", ""))
+                If txtPlayerID.Text.Length = 0 Then Exit Sub
             End With
 
 

@@ -124,15 +124,10 @@
                <asp:MenuItem Text="Find Player" NavigateUrl="Players_Find.aspx"></asp:MenuItem>
               <asp:MenuItem Text= "Add Player" NavigateUrl="Players_Add.aspx"></asp:MenuItem>
              <asp:MenuItem Text="Update Player" NavigateUrl="Players_Update.aspx"></asp:MenuItem>
-			 <asp:MenuItem Text="Delete Player" NavigateUrl="Players_Delete.aspx"></asp:MenuItem>
+			 
              </asp:MenuItem>
 
-           
-                     <asp:MenuItem Text="Reports">
-                   <asp:MenuItem Text="Players Report" NavigateUrl="~/Reports_Players/rptPlayers.aspx"></asp:MenuItem>
                  
-                   
-             </asp:MenuItem>        
             </Items>
             </asp:Menu>
 </div>

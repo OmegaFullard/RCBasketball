@@ -41,7 +41,7 @@ Public Class ctrPlayers_Delete
                     DeletePlayers()
 
                 Else
-                    If m_PlayerID.Length = 0 Then Exit Sub
+                    If m_PlayerID.Replace("--", "").Length = 0 Then Exit Sub
 
                     tblPlayers = thePlayers.GetPlayersByID(m_PlayerID)
                     If tblPlayers.Count = 0 Then Exit Sub
@@ -50,7 +50,7 @@ Public Class ctrPlayers_Delete
 
 
 
-                        Me.txtID.Text = .PlayerID : If Not .IsFirstNNull Then Me.txtFN.Text = .FirstN
+                        txtID.Text = .PlayerID : If Not .IsFirstNNull Then txtFN.Text = .FirstN
                         If Not .IsLastNNull Then txtLN.Text = .LastN : If Not .IsAddressNull Then txtAdd.Text = .Address.Trim
 
                         If Not .IsCityNull Then Me.txtc.Text = .City.Trim : If Not .IsStateNull Then Me.cmbStates.Text = .State.Trim
@@ -58,7 +58,7 @@ Public Class ctrPlayers_Delete
                             If .Zip.Trim.Length > 5 Then txtZ.Text = .Zip.Trim.Substring(0, 5) Else txtZ.Text = .Zip.Trim
                         End If
 
-                        If Not .IsPhoneNull Then txtPh.Text = .Phone
+                        If Not .IsPhoneNull Then txtPh.Text = .Phone.Trim
                         If Not .IsEmailNull Then txtE.Text = .Email
 
 
@@ -70,6 +70,7 @@ Public Class ctrPlayers_Delete
                 End If
 
             End If
+
 
         Catch ex As Exception
             Dim SendError As New clsRCBasketball_Web
@@ -113,8 +114,8 @@ Public Class ctrPlayers_Delete
 
     Private Sub CleanupControls()
 
-        Me.txtID.Text = String.Empty : Me.txtFN.Text = String.Empty : Me.txtLN.Text = String.Empty
-        txtAdd.Text = String.Empty : Me.txtc.Text = String.Empty : Me.cmbStates.Text = String.Empty : txtZ.Text = String.Empty
+        txtID.Text = String.Empty : txtFN.Text = String.Empty : txtLN.Text = String.Empty
+        txtAdd.Text = String.Empty : txtc.Text = String.Empty : cmbStates.Text = String.Empty : txtZ.Text = String.Empty
         txtPh.Text = String.Empty : txtE.Text = String.Empty
 
 

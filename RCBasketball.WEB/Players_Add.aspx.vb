@@ -27,7 +27,7 @@
 
                 If Request.Form("ctl00$MainContent$ctrSearch_Players$btnSearch") = "Search" Then
                     ctrSearch_Players.PopulateSearchControl()
-                    If ctrSearch_Players.PlayerID = 0 Then Exit Sub
+                    If ctrSearch_Players.PlayerID.Length = 0 Then Exit Sub
                     Me.ctrPlayers_Add.ClearControls() : Me.ctrPlayers_Add.PlayerID = ctrSearch_Players.PlayerID
                     ' Me.ctrPlayers_Add.ClearControls() : Me.ctrPlayers_Add.PlayersList = ctrSearch_Players.PlayerID
 

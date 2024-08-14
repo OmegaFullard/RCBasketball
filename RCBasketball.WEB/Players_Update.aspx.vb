@@ -31,14 +31,13 @@ Public Class Players_Update
         Try
 
             If (Page.IsPostBack) Then
-                Dim strPlayer As String = Request.Form("ctl00_MainContent_ctrSearchPlayers_Update_cmbPlayers_ClientState") _
-                .Replace(Chr(34), "").Replace("{", "").Replace("}", "").Replace(",", "").Replace("text", "").Replace("value", "").Replace("%20", " ").Replace("%26", "&")
-                If m_PlayerID.Length > 4 Then
-                    Dim arrPlayers() As String = strPlayer.Split(":")
-                    Me.ctrPlayers_Update.PlayerID = Integer.Parse(arrPlayers(1)) : Me.ctrPlayers_Update.FirstN = (arrPlayers(2))
+                If Request.Form("ctl00$MainContent$ctrSearch_Players$btnSearch") = "Search" Then
 
+                    ctrSearch_Players.PopulateSearchControl()
 
-                    Me.ctrSearch_Players_Update.ClearControl()
+                    If ctrSearch_Players.PlayerID.Length = 0 Then Exit Sub
+                    Me.ctrPlayers_Update.PlayerID = ctrSearch_Players.PlayerID
+
                 End If
 
 

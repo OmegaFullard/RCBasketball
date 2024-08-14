@@ -26,20 +26,8 @@ Public Class ctrPlayers_Add
         End Set
     End Property
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Dim theRCBasketball As New clsRCBasketball
-        Dim tblPlayers As New PlayersDataTable
 
-        Try
-            If (Page.IsPostBack) Then
-                If Request.Form("ct100$MainContent$ctrPlayers_Add$btnAdd") = "Add" Then
-                    AddPlayers()
-                End If
-            Else
-                PopulateControls()
-            End If
-        Catch ex As Exception
-            Throw
-        End Try
+        PopulateControls()
 
     End Sub
 
@@ -52,7 +40,8 @@ Public Class ctrPlayers_Add
             Dim thisPlayers As New clsPlayers
 
             With thisPlayers
-                If txtID.Text.Trim.Length = 0 Then Exit Sub
+
+
 
 
                 .PlayerID = txtID.Text : .FirstN = txtFN.Text : .LastN = txtLN.Text
@@ -60,24 +49,25 @@ Public Class ctrPlayers_Add
                 .Phone = txtPh.Text : .Email = txtE.Text
 
 
+                If txtID.Text.Trim.Length = 0 Then Exit Sub
+
             End With
 
-
-
             Try
+
+
                 Dim theRCBasketball As New clsRCBasketball
-                theRCBasketball.AddPlayer(thisPlayers)
-                'theRCBasketball.GetPlayersByID(Convert.ToInt32(thisPlayers))
-                lblResult.Text = "Player data has been added"
+                m_PlayerID = theRCBasketball.AddPlayer(thisPlayers)
+
+
+
             Catch ex As SqlException
-
-                If ex.Number = 2627 Then
-                    lblResult.Text = "Player already exist!"
-                Else
-                    Throw New ApplicationException(ex.Message)
-                End If
-
+                Throw New ApplicationException(ex.Message)
             End Try
+
+
+            lblResult.Text = "Player has been added"
+            Me.lblPlayerID.Text = "ID" + m_PlayerID
 
         Catch ex As Exception
             Dim SendError As New clsRCBasketball_Web
@@ -85,6 +75,7 @@ Public Class ctrPlayers_Add
             SendError.SendMailMessage(NotificationBody)
             Response.Redirect("ErrorPage.aspx", False)
         End Try
+
 
     End Sub
 

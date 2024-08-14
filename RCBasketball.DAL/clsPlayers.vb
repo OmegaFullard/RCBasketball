@@ -12,11 +12,11 @@
         End Set
     End Property
 
-    Public Property origPlayerID As String
+    Public Property origPlayerID As Integer
         Get
             Return m_origPlayerID
         End Get
-        Set(ByVal value As String)
+        Set(ByVal value As Integer)
             m_PlayerID = value
         End Set
     End Property

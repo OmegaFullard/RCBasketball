@@ -50,13 +50,13 @@ Partial Public Class Players_Update
     Protected WithEvents baller2 As Global.System.Web.UI.WebControls.Image
 
     '''<summary>
-    '''ctrSearch_Players_Update control.
+    '''ctrSearch_Players control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents ctrSearch_Players_Update As Global.RCBasketball.WEB.ctrSearch_Players_Update
+    Protected WithEvents ctrSearch_Players As Global.RCBasketball.WEB.ctrSearch_Players
 
     '''<summary>
     '''NavigationMenu control.

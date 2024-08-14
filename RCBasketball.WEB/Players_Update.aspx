@@ -1,30 +1,19 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Players_Update.aspx.vb"  MasterPageFile="~/Site.Master" Inherits="RCBasketball.WEB.Players_Update" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
-<%@ Register Src="~/Controls_Search/ctrSearch_Players_Update.ascx" TagPrefix="uc1" TagName="ctrSearch_Players_Update" %>
 <%@ Register Src="~/Controls_Update/ctrPlayers_Update.ascx" TagPrefix="uc1" TagName="ctrPlayers_Update" %>
 <%@ Register Src="~/Controls_Search/ctrSearch_Players.ascx" TagPrefix="uc1" TagName="ctrSearch_Players" %>
-<%@ Register Src="~/Controls_Add/ctrPlayers_Add.ascx" TagPrefix="uc1" TagName="ctrPlayers_Add" %>
+
 
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="head">
             </asp:Content>
            <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="ContentPlaceHolder1" >
 
-               <script type="text/javascript">
-                   function OnClientLoad0(sender, args) {
-                       $telerik.$(".k-input")[0].setAttribute("readonly", "true");
-                   }
-
-                   function OnClientLoad1(sender, args) {
-                       $telerik.$(".k-input")[2].setAttribute("readonly", "true");
-                   }
-
-               </script>
-
+     
 
                  <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
               <div aria-dropeffect="move" style="padding-left:5px; padding-right:10px; height:500px;overflow: auto; background:#e6ecff">    
-                       <div class="HeadingB" >Players</div>
+                       <div class="HeadingB" >Update Players</div>
                  
                             <asp:Table ID="Table1" runat="server" ForeColor="#0000A0" >
                                    
@@ -34,7 +23,7 @@
                                                        </asp:Panel> 
                                          </asp:TableCell>
                                           <asp:TableCell>&nbsp;&nbsp;&nbsp</asp:TableCell>
-                                        <asp:TableCell VerticalAlign="Top"><uc1:ctrSearch_Players_Update runat="server" ID="ctrSearch_Players_Update" /></asp:TableCell>
+                                        <asp:TableCell VerticalAlign="Top"><uc1:ctrSearch_Players runat="server" ID="ctrSearch_Players" /></asp:TableCell>
                                     </asp:TableRow>
                               
                               </asp:Table>
@@ -44,7 +33,7 @@
                                                   <asp:MenuItem Text="Find" NavigateUrl="Players_Find.aspx"></asp:MenuItem> 
                                                   <asp:MenuItem  Text="Add"  NavigateUrl="Players_Add.aspx"></asp:MenuItem>
                                                  <asp:MenuItem Text="Update" NavigateUrl="Players_Update.aspx"></asp:MenuItem> 
-                                                 <asp:MenuItem Text="Delete" NavigateUrl="Players_Delete.aspx"></asp:MenuItem> 
+                                                  
                                               </Items>
                                            </asp:Menu>
                                  </div>
