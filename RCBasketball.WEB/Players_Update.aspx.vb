@@ -31,12 +31,12 @@ Public Class Players_Update
         Try
 
             If (Page.IsPostBack) Then
-                If Request.Form("ctl00$MainContent$ctrSearch_Players$btnSearch") = "Search" Then
+                If Request.Form("ctl00$MainContent$ctrSearch_Players_Update_cmbPlayers_ClientState") = "Search" Then
 
-                    ctrSearch_Players.PopulateSearchControl()
+                    ctrSearch_Players_Update.PopulateSearchControl()
 
-                    If ctrSearch_Players.PlayerID.Length = 0 Then Exit Sub
-                    Me.ctrPlayers_Update.PlayerID = ctrSearch_Players.PlayerID
+                    If ctrPlayers_Update.PlayerID.Length = 0 Then Exit Sub
+                    Me.ctrPlayers_Update.PlayerID = ctrSearch_Players_Update.PlayerID
 
                 End If
 

@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Players_Update.aspx.vb"  MasterPageFile="~/Site.Master" Inherits="RCBasketball.WEB.Players_Update" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+<%@ Register Src="~/Controls_Search/ctrSearch_Players_Update.ascx" TagPrefix="uc1" TagName="ctrSearch_Players_Update" %>
 <%@ Register Src="~/Controls_Update/ctrPlayers_Update.ascx" TagPrefix="uc1" TagName="ctrPlayers_Update" %>
 <%@ Register Src="~/Controls_Search/ctrSearch_Players.ascx" TagPrefix="uc1" TagName="ctrSearch_Players" %>
 
@@ -10,7 +11,7 @@
            <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="ContentPlaceHolder1" >
 
      
-
+               <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
                
               <div aria-dropeffect="move" style="padding-left:5px; padding-right:10px; height:500px;overflow: auto; background:#e6ecff">    
                        <div class="HeadingB" >Update Players</div>
@@ -23,7 +24,7 @@
                                                        </asp:Panel> 
                                          </asp:TableCell>
                                           <asp:TableCell>&nbsp;&nbsp;&nbsp</asp:TableCell>
-                                        <asp:TableCell VerticalAlign="Top"><uc1:ctrSearch_Players runat="server" ID="ctrSearch_Players" /></asp:TableCell>
+                                      <asp:TableCell VerticalAlign="Top"><uc1:ctrSearch_Players_Update runat="server" ID="ctrSearch_Players_Update" /></asp:TableCell>
                                     </asp:TableRow>
                               
                               </asp:Table>
