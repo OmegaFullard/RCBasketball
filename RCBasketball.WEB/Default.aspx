@@ -77,14 +77,14 @@
 				<b>Programs and Growth:<br>
 				</b>
 				The league offers a variety of programs, including skills and drills sessions, team play, and specialized training. It also hosts competitive leagues for those looking to take their game to the next level. 
-				Over the years, the league has grown significantly, attracting players from all over the region and becoming a central hub for basketball in Royal City1.
+				Over the years, the league has grown significantly, attracting players from all over the region and becoming a central hub for basketball in Royal City.
                 </p>
 				
 				<p>
 				<b>Community Impact:<br>
 				</b>
 				One of the league’s core values is creating a sense of belonging for every participant. Coaches and staff are dedicated to teaching the values of teamwork, dedication, and personal growth. 
-				The league’s success is measured not just by the number of games won, but by the positive impact it has on the lives of its players and the broader community1.
+				The league’s success is measured not just by the number of games won, but by the positive impact it has on the lives of its players and the broader community.
 				The Royal City Basketball League continues to thrive, thanks to the hard work and dedication of its coaches, volunteers, and participants. 
 				It remains a beacon of community spirit and a testament to the power of sports to bring people together.
 				</p>
